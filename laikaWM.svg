@@ -601,11 +601,11 @@
      pagecolor="#ffffff"
      gridtolerance="10"
      inkscape:window-maximized="1"
-     inkscape:zoom="11.578125"
+     inkscape:zoom="0.51168566"
      objecttolerance="10"
      borderopacity="1"
      inkscape:current-layer="g10"
-     inkscape:cx="111.14343"
+     inkscape:cx="110.48465"
      inkscape:cy="-4.660586"
      inkscape:window-y="1"
      inkscape:window-x="0"
@@ -775,7 +775,7 @@
          id="rect1818"
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.38665962;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill" /></g><g
        id="g1279"
-       transform="matrix(1.32,0,0,1.32,-81.792287,-26.260517)"><text
+       transform="matrix(1.32,0,0,1.32,-81.792287,-45.517063)"><text
          transform="scale(1,-1)"
          id="text1244"
          y="-42.587498"
@@ -803,7 +803,7 @@
      id="metadata224"><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><cc:license
            rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" /><dc:publisher><cc:Agent
-             rdf:about="http://openclipart.org/"><dc:title>Openclipart</dc:title></cc:Agent></dc:publisher><dc:title /></cc:Work><cc:License
+             rdf:about="http://openclipart.org/"><dc:title>Openclipart</dc:title></cc:Agent></dc:publisher><dc:title></dc:title></cc:Work><cc:License
          rdf:about="http://creativecommons.org/publicdomain/zero/1.0/"><cc:permits
            rdf:resource="http://creativecommons.org/ns#Reproduction" /><cc:permits
            rdf:resource="http://creativecommons.org/ns#Distribution" /><cc:permits

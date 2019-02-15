@@ -1,0 +1,34 @@
+Intro:
+LaikaWM is highly skinnable and scalable. The vast majority of the UI is based on SVG files.
+
+Theme Variants:
+	A single theme can have many variants, which are stored as subfolders in the theme's directory. This allows a theme developer, who might want to create the same theme in different colors to be able to combine them into one package and avoid cluttering up the themes menu. Every theme must have at least one variant, usually named "default."
+
+LaikaWM Color System:
+	rgb(a): 0->255,0->255,0->255(,0->255)	
+	
+	Examples:
+		- For example to make a black that is semitransparent:
+			0,0,0,100
+		- A red that is semitransparent:
+			255,0,0,100
+		- A solid blue:
+			0,0,255
+
+Meters:
+	Meters are plugins that display dynamic content within LaikaWM. 
+	
+	They can appear in three modes:
+		- Minimized:
+			They appear in a small region in the bottom panel. Default.
+		- Docked:
+			They are docked to a side of the screen and when windows are maximized, the windows don't cover them.
+		- Floating:
+			They appear below all windows, on the desktop.
+			
+	LaikaWM comes with these meters as default:
+		- Clock
+		- CPU Monitor
+		- Network Monitor
+		- Ram Monitor
+		- Disk Monitorc

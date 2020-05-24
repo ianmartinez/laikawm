@@ -1,7 +1,7 @@
 ![Laika Logo](https://raw.githubusercontent.com/ianmartinez/laikawm/master/logo/laika.png)
 
 # LaikaWM
-A lightweight window manager for Wayland that is inspired by many other lightweight window managers written for X, particularly IceWM, but with a focus on modern features, such as HiDPI support and window snapping.
+A lightweight compositor for Wayland that is inspired by many lightweight window managers written for X, particularly IceWM and Fluxbox, but with a focus on modern features, such as HiDPI support and window snapping.
 
 ## Status
 LaikaWM is currently under development.

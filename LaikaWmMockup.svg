@@ -16,7 +16,115 @@
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="LaikaWmMockup.svg">
   <defs
-     id="defs1402" />
+     id="defs1402">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1282">
+      <stop
+         style="stop-color:#404e61;stop-opacity:1"
+         offset="0"
+         id="stop1278" />
+      <stop
+         style="stop-color:#151a22;stop-opacity:1"
+         offset="1"
+         id="stop1280" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1186"
+       inkscape:collect="always">
+      <stop
+         id="stop1182"
+         offset="0"
+         style="stop-color:#404e61;stop-opacity:1" />
+      <stop
+         id="stop1184"
+         offset="1"
+         style="stop-color:#262f3a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.9900745,0,0,1,2.1177689,0)"
+       gradientUnits="userSpaceOnUse"
+       y2="-495.60114"
+       x2="758.01184"
+       y1="-489.60114"
+       x1="758.01184"
+       id="linearGradient1188"
+       xlink:href="#linearGradient1186"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.99007533,0,0,1,7.5230276,0)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient1186"
+       id="linearGradient1188-5"
+       x1="758.01184"
+       y1="-489.60114"
+       x2="758.01184"
+       y2="-495.60114"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.2862119,-3.2902313,2.4734523,3.7638686,247.25593,3845.3103)"
+       r="2.0272198"
+       fy="-492.60513"
+       fx="753.96234"
+       cy="-492.60513"
+       cx="753.96234"
+       id="radialGradient1276"
+       xlink:href="#linearGradient1282"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="-495.60114"
+       x2="758.01184"
+       y1="-489.60114"
+       x1="758.01184"
+       gradientTransform="matrix(0,-0.92041374,-1,0,819.39887,950.68931)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1287"
+       xlink:href="#linearGradient1186"
+       inkscape:collect="always" />
+    <radialGradient
+       r="2.0272198"
+       fy="-492.61118"
+       fx="753.99847"
+       cy="-492.61118"
+       cx="753.99847"
+       gradientTransform="matrix(3.2024895,-3.0965355,3.649513,3.7743883,692.11874,3439.7842)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1290"
+       xlink:href="#linearGradient1282"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="-495.60114"
+       x2="758.01184"
+       y1="-489.60114"
+       x1="758.01184"
+       gradientTransform="matrix(1.465171,0,0,1,198.38311,-264.66186)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1294"
+       xlink:href="#linearGradient1186"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1282"
+       id="radialGradient1290-1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.2024895,-3.0965355,3.649513,3.7743883,-1133.8812,3439.7843)"
+       cx="753.99847"
+       cy="-492.61118"
+       fx="753.99847"
+       fy="-492.61118"
+       r="2.0272198" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1186"
+       id="linearGradient1287-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,-0.92041374,1,0,1006.6011,950.94747)"
+       x1="758.01184"
+       y1="-489.60114"
+       x2="758.01184"
+       y2="-495.60114" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,9 +132,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.19375"
-     inkscape:cx="906.44105"
-     inkscape:cy="480.0817"
+     inkscape:zoom="0.84410872"
+     inkscape:cx="716.3318"
+     inkscape:cy="316.57171"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -843,5 +951,127 @@ aNCgQYMGDRo0aNCgQYMGDRo0aNCgQYNbD/8PDJqqseOC42oAAAAASUVORK5CYII=
          x="1781.5876"
          id="tspan2296-2"
          sodipodi:role="line">Jun 4, 2020 2:15 PM</tspan></text>
+    <rect
+       y="286"
+       x="511"
+       height="466.26343"
+       width="796"
+       id="rect1030"
+       style="fill:#000000;fill-opacity:0.75;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+    <text
+       id="text2298-2"
+       y="308.5289"
+       x="529.53534"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         y="308.5289"
+         x="529.53534"
+         id="tspan2296-27"
+         sodipodi:role="line">ianmtz@laikapc:~$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Ebrima;-inkscape-font-specification:Ebrima;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       x="661.91522"
+       y="308.45728"
+       id="text2298-2-5"><tspan
+         sodipodi:role="line"
+         id="tspan2296-27-9"
+         x="661.91522"
+         y="308.45728"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Ebrima;-inkscape-font-specification:Ebrima;fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">dnf update -y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="746.08276"
+       y="308.5289"
+       id="text2298-2-9"><tspan
+         sodipodi:role="line"
+         id="tspan2296-27-2"
+         x="746.08276"
+         y="308.5289"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.6667px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">_</tspan></text>
+    <rect
+       y="254.00002"
+       x="511"
+       height="31.999998"
+       width="796"
+       id="rect1094"
+       style="fill:#e2e2e2;fill-opacity:1;stroke:#989898;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+    <text
+       id="text2298-2-5-9"
+       y="274.84375"
+       x="526.53125"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Ebrima;-inkscape-font-specification:Ebrima;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Ebrima;-inkscape-font-specification:Ebrima;fill:#000000;fill-opacity:1;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+         y="274.84375"
+         x="526.53125"
+         id="tspan2296-27-9-5"
+         sodipodi:role="line">File  Edit  View  Terminal  Tab  Help</tspan></text>
+    <rect
+       style="fill:url(#radialGradient1290);fill-opacity:1;stroke-width:1.21403;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect2032-1-6"
+       width="6.0999999"
+       height="6.0999999"
+       x="1308.8999"
+       y="-760.263"
+       transform="scale(1,-1)" />
+    <rect
+       y="-754.29999"
+       x="511"
+       height="2"
+       width="806"
+       id="rect2032-8-0-6"
+       style="fill:#475a74;fill-opacity:1;stroke-width:7.99061;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       transform="scale(1,-1)" />
+    <path
+       id="rect2032-8-0-4"
+       style="fill:#151a22;fill-opacity:1;stroke-width:6.35017;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       d="m 1317,762.00486 v -509 h -2 v 509 z" />
+    <path
+       id="rect2032-1-9"
+       style="fill:url(#linearGradient1287);fill-opacity:1;stroke-width:10.9149;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       d="m 1315,754.30481 v -501.3 h -6 v 501.3 z" />
+    <path
+       id="rect2032-8-0-6-5"
+       style="fill:#475a74;fill-opacity:1;stroke-width:6.32016;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       d="m 1309,757.23846 v -504.2336 h -2 v 504.2336 z" />
+    <rect
+       transform="scale(1,-1)"
+       style="fill:#151a22;fill-opacity:1;stroke-width:7.99081;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect2032-8-0"
+       width="806"
+       height="2"
+       x="511"
+       y="-762.263" />
+    <rect
+       transform="scale(1,-1)"
+       y="-760.263"
+       x="511"
+       height="6"
+       width="798.00006"
+       id="rect2032-1"
+       style="fill:url(#linearGradient1294);fill-opacity:1;stroke-width:13.7713;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill" />
+    <rect
+       transform="scale(-1)"
+       y="-760.263"
+       x="-517.10004"
+       height="6.0999999"
+       width="6.0999999"
+       id="rect2032-1-6-9"
+       style="fill:url(#radialGradient1290-1);fill-opacity:1;stroke-width:1.21403;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill" />
+    <path
+       d="M 509,762.26307 V 253.26305 h 2 v 509.00002 z"
+       style="fill:#151a22;fill-opacity:1;stroke-width:6.35017;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect2032-8-0-4-6" />
+    <path
+       d="M 511,754.56297 V 253.263 h 6 v 501.29997 z"
+       style="fill:url(#linearGradient1287-3);fill-opacity:1;stroke-width:10.9149;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect2032-1-9-0" />
+    <path
+       d="m 517,754.26465 v -501.0016 h 2 v 501.0016 z"
+       style="fill:#475a74;fill-opacity:1;stroke-width:6.29987;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect2032-8-0-6-5-2" />
   </g>
 </svg>

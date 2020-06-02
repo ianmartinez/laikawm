@@ -6,6 +6,8 @@ A lightweight compositor for Wayland that is inspired by many lightweight window
 ## Status
 LaikaWM is currently under development.
 
+![Screenshot](https://raw.githubusercontent.com/ianmartinez/laikawm/master/LaikaWmMockup.png)
+
 ## Features: 
   - A scalable interface: LaikaWM themes, rather than being composed of raster formats like XPM or PNG, use SVG instead
   - Multiple desktops

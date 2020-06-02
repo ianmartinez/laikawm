@@ -4,7 +4,7 @@
 A lightweight compositor for Wayland that is inspired by many lightweight window managers written for X, particularly IceWM and Fluxbox, but with a focus on modern features, such as HiDPI support and window snapping.
 
 ## Status
-LaikaWM is currently under development.
+LaikaWM is currently under development. All screenshots are mockups.
 
 ![Screenshot](https://raw.githubusercontent.com/ianmartinez/laikawm/master/LaikaWmMockup.png)
 

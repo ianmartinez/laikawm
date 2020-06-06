@@ -1,0 +1,1 @@
+dnf upgrade -y && dnf install codeblocks lazarus inkscape meson wayland-devel wayland-protocols-devel egl-wayland-devel mesa-libGLES-devel libdrm-devel mesa-libgbm-devel libinput-devel libxkbcommon-devel systemd-devel pixman-devel libxcb-devel xcb-util-image-devel -y

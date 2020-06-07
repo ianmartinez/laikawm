@@ -14,6 +14,10 @@ rule c_COMPILER
 
 # Rules for linking.
 
+rule STATIC_LINKER
+ command = rm -f $out && gcc-ar $LINK_ARGS $out $in
+ description = Linking static target $out
+
 rule c_LINKER
  command = cc $ARGS -o $out $in $LINK_ARGS
  description = Linking target $out
@@ -36,20 +40,35 @@ build PHONY: phony
 
 # Build rules for targets
 
-build laikawm@exe/cursor.c.o: c_COMPILER ../cursor.c
+build protocol/xdg-shell-protocol.c: CUSTOM_COMMAND //usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml | /usr/bin/wayland-scanner
+ COMMAND = /usr/bin/wayland-scanner private-code //usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml protocol/xdg-shell-protocol.c
+ description = Generating$ __usr_share_wayland_protocols_stable_xdg_shell_xdg_shell_xml_server_c$ with$ a$ custom$ command
+
+build protocol/xdg-shell-protocol.h: CUSTOM_COMMAND //usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml | /usr/bin/wayland-scanner
+ COMMAND = /usr/bin/wayland-scanner server-header //usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml protocol/xdg-shell-protocol.h
+ description = Generating$ __usr_share_wayland_protocols_stable_xdg_shell_xdg_shell_xml_server_h$ with$ a$ custom$ command
+
+build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o: c_COMPILER protocol/xdg-shell-protocol.c | protocol/xdg-shell-protocol.h
+ DEPFILE = protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o.d
+ ARGS = -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -fPIC
+
+build protocol/libclient_protos.a: STATIC_LINKER protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o
+ LINK_ARGS = csrD
+
+build laikawm@exe/cursor.c.o: c_COMPILER ../cursor.c || protocol/xdg-shell-protocol.h
  DEPFILE = laikawm@exe/cursor.c.o.d
- ARGS = -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g
+ ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/view.c.o: c_COMPILER ../view.c
+build laikawm@exe/view.c.o: c_COMPILER ../view.c || protocol/xdg-shell-protocol.h
  DEPFILE = laikawm@exe/view.c.o.d
- ARGS = -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g
+ ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/laikawm.c.o: c_COMPILER ../laikawm.c
+build laikawm@exe/laikawm.c.o: c_COMPILER ../laikawm.c || protocol/xdg-shell-protocol.h
  DEPFILE = laikawm@exe/laikawm.c.o.d
- ARGS = -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g
+ ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g
 
-build laikawm: c_LINKER laikawm@exe/cursor.c.o laikawm@exe/view.c.o laikawm@exe/laikawm.c.o | /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so
- LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so -Wl,--end-group
+build laikawm: c_LINKER laikawm@exe/cursor.c.o laikawm@exe/view.c.o laikawm@exe/laikawm.c.o | /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so protocol/libclient_protos.a
+ LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group protocol/libclient_protos.a /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so -Wl,--end-group '-Wl,-rpath,$$ORIGIN/protocol' -Wl,-rpath-link,/home/ian/laikawm/src/build/protocol
 
 # Test rules
 
@@ -97,21 +116,27 @@ build meson-uninstall: CUSTOM_COMMAND PHONY
 
 build uninstall: phony meson-uninstall
 
-build all: phony laikawm
+build all: phony protocol/libclient_protos.a laikawm
 
 build clean: phony meson-clean
 
-build meson-clean: CUSTOM_COMMAND PHONY
+build meson-clean-ctlist: CUSTOM_COMMAND PHONY
+ COMMAND = /usr/bin/meson --internal cleantrees /home/ian/laikawm/src/build/meson-private/cleantrees.dat
+ description = Cleaning$ custom$ target$ directories
+
+build clean-ctlist: phony meson-clean-ctlist
+
+build meson-clean: CUSTOM_COMMAND PHONY | clean-ctlist
  COMMAND = /usr/bin/ninja -t clean
  description = Cleaning
 
-build build.ninja: REGENERATE_BUILD ../meson.build meson-private/coredata.dat
+build build.ninja: REGENERATE_BUILD ../meson.build ../protocol/meson.build meson-private/coredata.dat
  pool = console
 
 build reconfigure: REGENERATE_BUILD PHONY
  pool = console
 
-build ../meson.build meson-private/coredata.dat: phony 
+build ../meson.build ../protocol/meson.build meson-private/coredata.dat: phony 
 
 default all
 

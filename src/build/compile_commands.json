@@ -1,19 +1,25 @@
 [
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'laikawm@exe/cursor.c.o' -MF 'laikawm@exe/cursor.c.o.d' -o 'laikawm@exe/cursor.c.o' -c ../cursor.c",
+    "command": "cc -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -fPIC -MD -MQ 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o' -MF 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o.d' -o 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o' -c protocol/xdg-shell-protocol.c",
+    "file": "protocol/xdg-shell-protocol.c",
+    "output": "protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o"
+  },
+  {
+    "directory": "/home/ian/laikawm/src/build",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/cursor.c.o' -MF 'laikawm@exe/cursor.c.o.d' -o 'laikawm@exe/cursor.c.o' -c ../cursor.c",
     "file": "../cursor.c",
     "output": "laikawm@exe/cursor.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'laikawm@exe/view.c.o' -MF 'laikawm@exe/view.c.o.d' -o 'laikawm@exe/view.c.o' -c ../view.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view.c.o' -MF 'laikawm@exe/view.c.o.d' -o 'laikawm@exe/view.c.o' -c ../view.c",
     "file": "../view.c",
     "output": "laikawm@exe/view.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'laikawm@exe/laikawm.c.o' -MF 'laikawm@exe/laikawm.c.o.d' -o 'laikawm@exe/laikawm.c.o' -c ../laikawm.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/laikawm.c.o' -MF 'laikawm@exe/laikawm.c.o.d' -o 'laikawm@exe/laikawm.c.o' -c ../laikawm.c",
     "file": "../laikawm.c",
     "output": "laikawm@exe/laikawm.c.o"
   }

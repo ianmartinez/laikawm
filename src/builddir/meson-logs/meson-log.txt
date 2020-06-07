@@ -1,0 +1,11 @@
+Build started at 2020-06-07T15:21:29.042746
+Main binary: /usr/bin/python3
+Build Options: -Dbuildtype=debug
+Python system: Linux
+The Meson build system
+Version: 0.54.2
+Source dir: /home/ian/laikawm/src
+Build dir: /home/ian/laikawm/src/builddir
+Build type: native build
+
+ERROR: No statements in code.

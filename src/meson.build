@@ -15,6 +15,10 @@ inc = include_directories('include')
 
 project_source_files = [
   'cursor.c',
+  'input.c',
+  'keyboard.c',
+  'render.c',
+  'selection.c',
   'view.c',
   'laikawm.c'
 ]

@@ -1,5 +1,14 @@
 #include "cursor.h"
 
+void server_new_pointer(struct lk_server *server, 
+	struct wlr_input_device *device) {
+	/* We don't do anything special with pointers. All of our pointer handling
+	 * is proxied through wlr_cursor. On another compositor, you might take this
+	 * opportunity to do libinput configuration on the device to set
+	 * acceleration, etc. */
+	wlr_cursor_attach_input_device(server->cursor, device);
+}
+
 void process_cursor_move(struct lk_server *server, uint32_t time) {
 	/* Move the grabbed view to the new position. */
 	server->grabbed_view->x = server->cursor->x - server->grab_x;
@@ -120,8 +129,7 @@ void server_cursor_motion(struct wl_listener *listener, void *data) {
 	process_cursor_motion(server, event->time_msec);
 }
 
-void server_cursor_motion_absolute(
-		struct wl_listener *listener, void *data) {
+void server_cursor_motion_absolute(struct wl_listener *listener, void *data) {
 	/* This event is forwarded by the cursor when a pointer emits an _absolute_
 	 * motion event, from 0..1 on each axis. This happens, for example, when
 	 * wlroots is running under a Wayland window rather than KMS+DRM, and you
@@ -178,4 +186,23 @@ void server_cursor_frame(struct wl_listener *listener, void *data) {
 		wl_container_of(listener, server, cursor_frame);
 	/* Notify the client with pointer focus of the frame event. */
 	wlr_seat_pointer_notify_frame(server->seat);
+}
+
+void seat_request_cursor(struct wl_listener *listener, void *data) {
+	struct lk_server *server = wl_container_of(
+			listener, server, request_cursor);
+	/* This event is rasied by the seat when a client provides a cursor image */
+	struct wlr_seat_pointer_request_set_cursor_event *event = data;
+	struct wlr_seat_client *focused_client =
+		server->seat->pointer_state.focused_client;
+	/* This can be sent by any client, so we check to make sure this one is
+	 * actually has pointer focus first. */
+	if (focused_client == event->seat_client) {
+		/* Once we've vetted the client, we can tell the cursor to use the
+		 * provided surface as the cursor image. It will set the hardware cursor
+		 * on the output that it's currently on and continue to do so as the
+		 * cursor moves between outputs. */
+		wlr_cursor_set_surface(server->cursor, event->surface,
+				event->hotspot_x, event->hotspot_y);
+	}
 }

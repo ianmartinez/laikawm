@@ -1,4 +1,4 @@
-Build started at 2020-06-07T16:57:50.468367
+Build started at 2020-06-07T22:16:46.998265
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -11,9 +11,39 @@ None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global fl
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Project name: laikawm
 Project version: 0.0.1
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/ian/laikawm/src/build/meson-private/sanitycheckc.c -o /home/ian/laikawm/src/build/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/ian/laikawm/src/build/meson-private/sanitycheckc.exe
 C compiler for the build machine: cc (gcc 10.1.1 "cc (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
 C linker for the build machine: cc ld.bfd 2.34-3
 None of 'AR' are defined in the environment, not changing global flags.
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/ian/laikawm/src/build/meson-private/sanitycheckc.c -o /home/ian/laikawm/src/build/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/ian/laikawm/src/build/meson-private/sanitycheckc.exe
 C compiler for the host machine: cc (gcc 10.1.1 "cc (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
 C linker for the host machine: cc ld.bfd 2.34-3
 None of 'AR' are defined in the environment, not changing global flags.
@@ -23,27 +53,97 @@ Host machine cpu family: x86_64
 Host machine cpu: x86_64
 Target machine cpu family: x86_64
 Target machine cpu: x86_64
-Dependency wayland-protocols found: YES 1.20 (cached)
+Pkg-config binary for MachineChoice.HOST is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Trying pkg-config binary pkg-config for machine MachineChoice.HOST at ['/usr/bin/pkg-config']
+Found pkg-config: /usr/bin/pkg-config (1.6.3)
+Determining dependency 'wayland-protocols' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion wayland-protocols` -> 0
+1.20
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags wayland-protocols` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-protocols --libs` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-protocols --libs` -> 0
+
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency wayland-protocols found: YES 1.20
 PKG_CONFIG_PATH: 
 Called `/usr/bin/pkg-config --variable=pkgdatadir wayland-protocols` -> 0
 //usr/share/wayland-protocols
 Got pkgconfig variable pkgdatadir : //usr/share/wayland-protocols
-Dependency wayland-scanner found: YES 1.18.0 (cached)
+Pkg-config binary for MachineChoice.BUILD is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Trying pkg-config binary pkg-config for machine MachineChoice.BUILD at ['/usr/bin/pkg-config']
+Found pkg-config: /usr/bin/pkg-config (1.6.3)
+Determining dependency 'wayland-scanner' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion wayland-scanner` -> 0
+1.18.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags wayland-scanner` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-scanner --libs` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-scanner --libs` -> 0
+
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Build-time dependency wayland-scanner found: YES 1.18.0
 PKG_CONFIG_PATH: 
 Called `/usr/bin/pkg-config --variable=wayland_scanner wayland-scanner` -> 0
 /usr/bin/wayland-scanner
 Got pkgconfig variable wayland_scanner : /usr/bin/wayland-scanner
 Program /usr/bin/wayland-scanner found: YES (/usr/bin/wayland-scanner)
-Dependency wlroots found: YES 0.10.1 (cached)
-Dependency wayland-server found: YES 1.18.0 (cached)
-Dependency xkbcommon found: YES 0.10.0 (cached)
-Build targets in project: 4
-
-Option c_std is: none [default: c11]
-Found ninja-1.10.0 at /usr/bin/ninja
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'wlroots' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion wlroots` -> 0
+0.10.1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags wlroots` -> 0
+-I/usr/include/libdrm -I/usr/include/pixman-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wlroots --libs` -> 0
+-L/usr/lib64 -lwlroots
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wlroots --libs` -> 0
+-lwlroots
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpmi_zrw1z
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpmi_zrw1z/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpmi_zrw1z/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpd2w5uyai
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpd2w5uyai/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpd2w5uyai/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+
+Code:
+ #include<stdio.h>
+        
+        int main(void) {
+            printf("%ld\n", (long)(sizeof(void *)));
+            return 0;
+        };
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Program stdout:
+
+8
+
+Program stderr:
+
+
+Running compile:
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpumicisnu
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpumicisnu/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpumicisnu/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -54,5 +154,41 @@ libraries: =/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linu
 
 Compiler stderr:
  
+Run-time dependency wlroots found: YES 0.10.1
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'wayland-server' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion wayland-server` -> 0
+1.18.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags wayland-server` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-server --libs` -> 0
+-L/usr/lib64 -lwayland-server
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-server --libs` -> 0
+-lwayland-server
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency wayland-server found: YES 1.18.0
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xkbcommon' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xkbcommon` -> 0
+0.10.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xkbcommon` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xkbcommon --libs` -> 0
+-L/usr/lib64 -lxkbcommon
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xkbcommon --libs` -> 0
+-lxkbcommon
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency xkbcommon found: YES 0.10.0
+Build targets in project: 4
+
+Found ninja-1.10.0 at /usr/bin/ninja
 None of 'STRIP' are defined in the environment, not changing global flags.
 None of 'STRIP' are defined in the environment, not changing global flags.

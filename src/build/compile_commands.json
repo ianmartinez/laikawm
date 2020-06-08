@@ -7,6 +7,12 @@
   },
   {
     "directory": "/home/ian/laikawm/src/build",
+    "command": "cc -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -fPIC -MD -MQ 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o' -MF 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o.d' -o 'protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o' -c protocol/xdg-decoration-unstable-v1-protocol.c",
+    "file": "protocol/xdg-decoration-unstable-v1-protocol.c",
+    "output": "protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o"
+  },
+  {
+    "directory": "/home/ian/laikawm/src/build",
     "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/color.c.o' -MF 'laikawm@exe/color.c.o.d' -o 'laikawm@exe/color.c.o' -c ../color.c",
     "file": "../color.c",
     "output": "laikawm@exe/color.c.o"
@@ -70,6 +76,12 @@
     "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view_operations.c.o' -MF 'laikawm@exe/view_operations.c.o.d' -o 'laikawm@exe/view_operations.c.o' -c ../view_operations.c",
     "file": "../view_operations.c",
     "output": "laikawm@exe/view_operations.c.o"
+  },
+  {
+    "directory": "/home/ian/laikawm/src/build",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/window_decoration.c.o' -MF 'laikawm@exe/window_decoration.c.o.d' -o 'laikawm@exe/window_decoration.c.o' -c ../window_decoration.c",
+    "file": "../window_decoration.c",
+    "output": "laikawm@exe/window_decoration.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",

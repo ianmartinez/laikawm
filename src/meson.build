@@ -25,6 +25,7 @@ project_source_files = [
   'surface.c',
   'view.c',
   'view_operations.c',
+  'window_decoration.c',
   'laikawm.c'
 ]
 

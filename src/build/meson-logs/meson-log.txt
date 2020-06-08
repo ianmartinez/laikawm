@@ -1,4 +1,4 @@
-Build started at 2020-06-08T14:08:56.570325
+Build started at 2020-06-08T14:51:59.233320
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpz8m8wxih
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpz8m8wxih/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpz8m8wxih/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpdny7916k
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpdny7916k/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpdny7916k/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpgcmmrbhj
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpgcmmrbhj/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpgcmmrbhj/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -187,7 +187,7 @@ Called `/usr/bin/pkg-config xkbcommon --libs` -> 0
 -lxkbcommon
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Run-time dependency xkbcommon found: YES 0.10.0
-Build targets in project: 4
+Build targets in project: 6
 
 Found ninja-1.10.0 at /usr/bin/ninja
 None of 'STRIP' are defined in the environment, not changing global flags.

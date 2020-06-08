@@ -34,6 +34,7 @@
 #include "include/surface.h"
 #include "include/output.h"
 #include "include/view_operations.h"
+#include "include/window_decoration.h"
 
 int main(int argc, char *argv[]) {
 	wlr_log_init(WLR_DEBUG, NULL);

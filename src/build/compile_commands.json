@@ -13,79 +13,79 @@
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/color.c.o' -MF 'laikawm@exe/color.c.o.d' -o 'laikawm@exe/color.c.o' -c ../color.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/color.c.o' -MF 'laikawm@exe/color.c.o.d' -o 'laikawm@exe/color.c.o' -c ../color.c",
     "file": "../color.c",
     "output": "laikawm@exe/color.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/cursor.c.o' -MF 'laikawm@exe/cursor.c.o.d' -o 'laikawm@exe/cursor.c.o' -c ../cursor.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/cursor.c.o' -MF 'laikawm@exe/cursor.c.o.d' -o 'laikawm@exe/cursor.c.o' -c ../cursor.c",
     "file": "../cursor.c",
     "output": "laikawm@exe/cursor.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/input.c.o' -MF 'laikawm@exe/input.c.o.d' -o 'laikawm@exe/input.c.o' -c ../input.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/input.c.o' -MF 'laikawm@exe/input.c.o.d' -o 'laikawm@exe/input.c.o' -c ../input.c",
     "file": "../input.c",
     "output": "laikawm@exe/input.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/keyboard.c.o' -MF 'laikawm@exe/keyboard.c.o.d' -o 'laikawm@exe/keyboard.c.o' -c ../keyboard.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/keyboard.c.o' -MF 'laikawm@exe/keyboard.c.o.d' -o 'laikawm@exe/keyboard.c.o' -c ../keyboard.c",
     "file": "../keyboard.c",
     "output": "laikawm@exe/keyboard.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/output.c.o' -MF 'laikawm@exe/output.c.o.d' -o 'laikawm@exe/output.c.o' -c ../output.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/output.c.o' -MF 'laikawm@exe/output.c.o.d' -o 'laikawm@exe/output.c.o' -c ../output.c",
     "file": "../output.c",
     "output": "laikawm@exe/output.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/render.c.o' -MF 'laikawm@exe/render.c.o.d' -o 'laikawm@exe/render.c.o' -c ../render.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/render.c.o' -MF 'laikawm@exe/render.c.o.d' -o 'laikawm@exe/render.c.o' -c ../render.c",
     "file": "../render.c",
     "output": "laikawm@exe/render.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/selection.c.o' -MF 'laikawm@exe/selection.c.o.d' -o 'laikawm@exe/selection.c.o' -c ../selection.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/selection.c.o' -MF 'laikawm@exe/selection.c.o.d' -o 'laikawm@exe/selection.c.o' -c ../selection.c",
     "file": "../selection.c",
     "output": "laikawm@exe/selection.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/server.c.o' -MF 'laikawm@exe/server.c.o.d' -o 'laikawm@exe/server.c.o' -c ../server.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/server.c.o' -MF 'laikawm@exe/server.c.o.d' -o 'laikawm@exe/server.c.o' -c ../server.c",
     "file": "../server.c",
     "output": "laikawm@exe/server.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/surface.c.o' -MF 'laikawm@exe/surface.c.o.d' -o 'laikawm@exe/surface.c.o' -c ../surface.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/surface.c.o' -MF 'laikawm@exe/surface.c.o.d' -o 'laikawm@exe/surface.c.o' -c ../surface.c",
     "file": "../surface.c",
     "output": "laikawm@exe/surface.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view.c.o' -MF 'laikawm@exe/view.c.o.d' -o 'laikawm@exe/view.c.o' -c ../view.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view.c.o' -MF 'laikawm@exe/view.c.o.d' -o 'laikawm@exe/view.c.o' -c ../view.c",
     "file": "../view.c",
     "output": "laikawm@exe/view.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view_operations.c.o' -MF 'laikawm@exe/view_operations.c.o.d' -o 'laikawm@exe/view_operations.c.o' -c ../view_operations.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/view_operations.c.o' -MF 'laikawm@exe/view_operations.c.o.d' -o 'laikawm@exe/view_operations.c.o' -c ../view_operations.c",
     "file": "../view_operations.c",
     "output": "laikawm@exe/view_operations.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/window_decoration.c.o' -MF 'laikawm@exe/window_decoration.c.o.d' -o 'laikawm@exe/window_decoration.c.o' -c ../window_decoration.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/window_decoration.c.o' -MF 'laikawm@exe/window_decoration.c.o.d' -o 'laikawm@exe/window_decoration.c.o' -c ../window_decoration.c",
     "file": "../window_decoration.c",
     "output": "laikawm@exe/window_decoration.c.o"
   },
   {
     "directory": "/home/ian/laikawm/src/build",
-    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/laikawm.c.o' -MF 'laikawm@exe/laikawm.c.o.d' -o 'laikawm@exe/laikawm.c.o' -c ../laikawm.c",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/laikawm.c.o' -MF 'laikawm@exe/laikawm.c.o.d' -o 'laikawm@exe/laikawm.c.o' -c ../laikawm.c",
     "file": "../laikawm.c",
     "output": "laikawm@exe/laikawm.c.o"
   }

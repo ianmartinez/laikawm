@@ -33,6 +33,10 @@ project_dependencies = [
   dependency('wlroots'),
   dependency('wayland-server'),
   dependency('xkbcommon'),
+  dependency('gdk-pixbuf-2.0'),
+  dependency('cairo'),
+  dependency('pango'),
+  dependency('pangocairo'),
   client_protos
 ]
 

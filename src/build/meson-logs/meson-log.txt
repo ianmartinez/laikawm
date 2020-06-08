@@ -1,4 +1,4 @@
-Build started at 2020-06-08T14:51:59.233320
+Build started at 2020-06-08T15:56:00.729260
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpdny7916k
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpdny7916k/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpdny7916k/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp3kgujdl2/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpssden2rb
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpssden2rb/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpssden2rb/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -187,6 +187,70 @@ Called `/usr/bin/pkg-config xkbcommon --libs` -> 0
 -lxkbcommon
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Run-time dependency xkbcommon found: YES 0.10.0
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'gdk-pixbuf-2.0' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion gdk-pixbuf-2.0` -> 0
+2.40.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags gdk-pixbuf-2.0` -> 0
+-I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/libmount -I/usr/include/blkid
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config gdk-pixbuf-2.0 --libs` -> 0
+-L/usr/lib64 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config gdk-pixbuf-2.0 --libs` -> 0
+-lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency gdk-pixbuf-2.0 found: YES 2.40.0
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'cairo' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion cairo` -> 0
+1.16.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags cairo` -> 0
+-I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng16
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config cairo --libs` -> 0
+-L/usr/lib64 -lcairo
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config cairo --libs` -> 0
+-lcairo
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency cairo found: YES 1.16.0
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'pango' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion pango` -> 0
+1.44.7
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags pango` -> 0
+-I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/cairo -I/usr/include/pixman-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pango --libs` -> 0
+-L/usr/lib64 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pango --libs` -> 0
+-lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency pango found: YES 1.44.7
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'pangocairo' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion pangocairo` -> 0
+1.44.7
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags pangocairo` -> 0
+-I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/cairo -I/usr/include/pixman-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pangocairo --libs` -> 0
+-L/usr/lib64 -lpangocairo-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lcairo
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pangocairo --libs` -> 0
+-lpangocairo-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lcairo
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency pangocairo found: YES 1.44.7
 Build targets in project: 6
 
 Found ninja-1.10.0 at /usr/bin/ninja

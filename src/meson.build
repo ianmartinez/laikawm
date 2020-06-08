@@ -1,8 +1,8 @@
 project(
-    'laikawm', 
-    'c',
+    'laikawm',
+    'c', 'cpp',
     version: '0.0.1',
-    default_options: ['c_std=c11']
+    default_options : ['c_std=c11', 'cpp_std=c++14']
 )
 
 build_args = [
@@ -14,18 +14,18 @@ subdir('protocol')
 inc = include_directories('include')
 
 project_source_files = [
-  'color.c',
-  'cursor.c',
-  'input.c',
-  'keyboard.c',
-  'output.c',
-  'render.c',
-  'selection.c',
-  'server.c',
-  'surface.c',
-  'view.c',
-  'view_operations.c',
-  'laikawm.c'
+  'color.cpp',
+  'cursor.cpp',
+  'input.cpp',
+  'keyboard.cpp',
+  'output.cpp',
+  'render.cpp',
+  'selection.cpp',
+  'server.cpp',
+  'surface.cpp',
+  'view.cpp',
+  'view_operations.cpp',
+  'laikawm.cpp'
 ]
 
 project_dependencies = [
@@ -40,5 +40,6 @@ project_target = executable(
   project_source_files,
   dependencies: project_dependencies,
   include_directories: inc,
-  c_args: build_args
+  c_args: build_args,
+  cpp_args: build_args
 )

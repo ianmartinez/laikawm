@@ -55,6 +55,10 @@ build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.
 build protocol/libclient_protos.a: STATIC_LINKER protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o
  LINK_ARGS = csrD
 
+build laikawm@exe/color.c.o: c_COMPILER ../color.c || protocol/xdg-shell-protocol.h
+ DEPFILE = laikawm@exe/color.c.o.d
+ ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g
+
 build laikawm@exe/cursor.c.o: c_COMPILER ../cursor.c || protocol/xdg-shell-protocol.h
  DEPFILE = laikawm@exe/cursor.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g
@@ -99,7 +103,7 @@ build laikawm@exe/laikawm.c.o: c_COMPILER ../laikawm.c || protocol/xdg-shell-pro
  DEPFILE = laikawm@exe/laikawm.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g
 
-build laikawm: c_LINKER laikawm@exe/cursor.c.o laikawm@exe/input.c.o laikawm@exe/keyboard.c.o laikawm@exe/output.c.o laikawm@exe/render.c.o laikawm@exe/selection.c.o laikawm@exe/server.c.o laikawm@exe/surface.c.o laikawm@exe/view.c.o laikawm@exe/view_operations.c.o laikawm@exe/laikawm.c.o | /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so protocol/libclient_protos.a
+build laikawm: c_LINKER laikawm@exe/color.c.o laikawm@exe/cursor.c.o laikawm@exe/input.c.o laikawm@exe/keyboard.c.o laikawm@exe/output.c.o laikawm@exe/render.c.o laikawm@exe/selection.c.o laikawm@exe/server.c.o laikawm@exe/surface.c.o laikawm@exe/view.c.o laikawm@exe/view_operations.c.o laikawm@exe/laikawm.c.o | /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so protocol/libclient_protos.a
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group protocol/libclient_protos.a /usr/lib64/libwlroots.so /usr/lib64/libwayland-server.so /usr/lib64/libxkbcommon.so -Wl,--end-group '-Wl,-rpath,$$ORIGIN/protocol' -Wl,-rpath-link,/home/ian/laikawm/src/build/protocol
 
 # Test rules

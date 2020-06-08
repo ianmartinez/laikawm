@@ -45,8 +45,7 @@ void output_add(struct wl_listener *listener, void *data) {
 void output_frame(struct wl_listener *listener, void *data) {
 	/* This function is called every time an output is ready to display a frame,
 	 * generally at the output's refresh rate (e.g. 60Hz). */
-	struct lk_output *output =
-		wl_container_of(listener, output, frame);
+	struct lk_output *output = wl_container_of(listener, output, frame);
 	struct wlr_renderer *renderer = output->server->renderer;
 
 	struct timespec now;
@@ -62,8 +61,12 @@ void output_frame(struct wl_listener *listener, void *data) {
 	/* Begin the renderer (calls glViewport and some other GL sanity checks) */
 	wlr_renderer_begin(renderer, width, height);
 
-	float color[4] = {0.3, 0.3, 0.3, 1.0};
-	wlr_renderer_clear(renderer, color);
+    struct lk_desktop desktop = output->server->desktop;
+    if(desktop.initialized) {
+        struct lk_color bg_color = desktop.background_color;
+        float color_array[4] = {bg_color.r, bg_color.g, bg_color.b, bg_color.a};
+        wlr_renderer_clear(renderer, color_array);
+    }
 
 	/* Each subsequent window we render is rendered on top of the last. Because
 	 * our view list is ordered front-to-back, we iterate over it backwards. */

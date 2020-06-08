@@ -176,6 +176,19 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
+	/**
+	 * Set up the desktop settings.
+	 */
+	server.desktop = (struct lk_desktop){
+		.initialized = true,
+		.background_color = (struct lk_color){
+			.r = 0.0,
+			.g = 0.5,
+			.b = 0.7,
+			.a = 1.0
+		},
+	};
+
 	/* Set the WAYLAND_DISPLAY environment variable to our socket and run the
 	 * startup command if requested. */
 	setenv("WAYLAND_DISPLAY", socket, true);
@@ -184,6 +197,7 @@ int main(int argc, char *argv[]) {
 			execl("/bin/sh", "/bin/sh", "-c", startup_cmd, (void *)NULL);
 		}
 	}
+
 	/* Run the Wayland event loop. This does not return until you exit the
 	 * compositor. Starting the backend rigged up all of the necessary event
 	 * loop configuration to listen to libinput events, DRM events, generate

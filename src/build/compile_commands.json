@@ -7,6 +7,12 @@
   },
   {
     "directory": "/home/ian/laikawm/src/build",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/color.c.o' -MF 'laikawm@exe/color.c.o.d' -o 'laikawm@exe/color.c.o' -c ../color.c",
+    "file": "../color.c",
+    "output": "laikawm@exe/color.c.o"
+  },
+  {
+    "directory": "/home/ian/laikawm/src/build",
     "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/cursor.c.o' -MF 'laikawm@exe/cursor.c.o.d' -o 'laikawm@exe/cursor.c.o' -c ../cursor.c",
     "file": "../cursor.c",
     "output": "laikawm@exe/cursor.c.o"

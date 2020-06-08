@@ -18,6 +18,7 @@
 
 #include "cursor_mode.h"
 #include "view.h"
+#include "desktop.h"
 
 struct lk_server {
 	struct wl_display *wl_display;
@@ -50,6 +51,8 @@ struct lk_server {
 	struct wlr_output_layout *output_layout;
 	struct wl_list outputs;
 	struct wl_listener new_output;
+
+	struct lk_desktop desktop;
 };
 
 #endif

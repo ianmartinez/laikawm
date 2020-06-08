@@ -9,6 +9,8 @@
 #include <wlr/types/wlr_output.h>
 #include "server.h"
 #include "render.h"
+#include "color.h"
+#include "desktop.h"
 
 struct lk_output {
 	struct wl_list link;

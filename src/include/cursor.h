@@ -2,7 +2,7 @@
 #define LK_CURSOR_H
 
 #include <wayland-server-core.h>
-#include "cursormode.h"
+#include "cursor_mode.h"
 #include "server.h"
 #include "view.h"
 

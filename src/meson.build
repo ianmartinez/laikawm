@@ -17,9 +17,13 @@ project_source_files = [
   'cursor.c',
   'input.c',
   'keyboard.c',
+  'output.c',
   'render.c',
   'selection.c',
+  'server.c',
+  'surface.c',
   'view.c',
+  'view_operations.c',
   'laikawm.c'
 ]
 

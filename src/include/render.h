@@ -9,13 +9,7 @@
 #include <wlr/types/wlr_output.h>
 #include <wlr/render/wlr_renderer.h>
 #include "server.h"
-
-struct lk_output {
-	struct wl_list link;
-	struct lk_server *server;
-	struct wlr_output *wlr_output;
-	struct wl_listener frame;
-};
+#include "output.h"
 
 /* Used to move all of the data necessary to render a surface from the top-level
  * frame handler to the per-surface render function. */
@@ -27,6 +21,5 @@ struct lk_render_data {
 };
 
 void render_surface(struct wlr_surface *surface,int sx, int sy, void *data);
-void output_frame(struct wl_listener *listener, void *data);
 
 #endif

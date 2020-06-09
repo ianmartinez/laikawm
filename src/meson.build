@@ -39,6 +39,7 @@ project_dependencies = [
   dependency('pango'),
   dependency('pangocairo'),
   dependency('librsvg-2.0'),
+  dependency('expat'),
   client_protos
 ]
 

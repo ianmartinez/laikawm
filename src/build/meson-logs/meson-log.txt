@@ -1,4 +1,4 @@
-Build started at 2020-06-09T12:39:54.132847
+Build started at 2020-06-09T13:03:40.721332
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpvha85sws
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpvha85sws/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpvha85sws/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -267,8 +267,8 @@ Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }
@@ -277,6 +277,22 @@ Compiler stdout:
 Compiler stderr:
  
 Run-time dependency librsvg-2.0 found: YES 2.48.6
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'expat' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion expat` -> 0
+2.2.8
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags expat` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config expat --libs` -> 0
+-L/usr/lib64 -lexpat
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config expat --libs` -> 0
+-lexpat
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency expat found: YES 2.2.8
 Build targets in project: 6
 
 Found ninja-1.10.0 at /usr/bin/ninja

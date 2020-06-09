@@ -38,6 +38,7 @@ project_dependencies = [
   dependency('cairo'),
   dependency('pango'),
   dependency('pangocairo'),
+  dependency('librsvg-2.0'),
   client_protos
 ]
 

@@ -1,4 +1,4 @@
-Build started at 2020-06-08T23:30:03.183949
+Build started at 2020-06-09T12:39:54.132847
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpps6tifu3
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpps6tifu3/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpps6tifu3/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpa5dmrp5z/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpvha85sws
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpvha85sws/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpvha85sws/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -251,6 +251,32 @@ Called `/usr/bin/pkg-config pangocairo --libs` -> 0
 -lpangocairo-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Run-time dependency pangocairo found: YES 1.44.7
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'librsvg-2.0' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion librsvg-2.0` -> 0
+2.48.6
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags librsvg-2.0` -> 0
+-I/usr/include/librsvg-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/gdk-pixbuf-2.0 -pthread -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng16
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
+-L/usr/lib64 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
+-lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpg60oxtsd/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Run-time dependency librsvg-2.0 found: YES 2.48.6
 Build targets in project: 6
 
 Found ninja-1.10.0 at /usr/bin/ninja

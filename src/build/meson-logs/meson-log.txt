@@ -1,4 +1,4 @@
-Build started at 2020-06-09T13:03:40.721332
+Build started at 2020-06-09T14:15:19.452960
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpxljxbc6z/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp_9kw0vee/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp_r432zw9
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp_r432zw9/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp_r432zw9/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -267,8 +267,8 @@ Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpyxmnbrrm/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }
@@ -293,7 +293,7 @@ Called `/usr/bin/pkg-config expat --libs` -> 0
 -lexpat
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Run-time dependency expat found: YES 2.2.8
-Build targets in project: 6
+Build targets in project: 8
 
 Found ninja-1.10.0 at /usr/bin/ninja
 None of 'STRIP' are defined in the environment, not changing global flags.

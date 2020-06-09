@@ -56,70 +56,82 @@ build protocol/xdg-decoration-unstable-v1-protocol.h: CUSTOM_COMMAND //usr/share
  COMMAND = /usr/bin/wayland-scanner server-header //usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml protocol/xdg-decoration-unstable-v1-protocol.h
  description = Generating$ __usr_share_wayland_protocols_unstable_xdg_decoration_xdg_decoration_unstable_v1_xml_server_h$ with$ a$ custom$ command
 
-build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o: c_COMPILER protocol/xdg-shell-protocol.c | protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build protocol/wlr-layer-shell-unstable-v1-protocol.c: CUSTOM_COMMAND ../protocol/wlr-layer-shell-unstable-v1.xml | /usr/bin/wayland-scanner
+ COMMAND = /usr/bin/wayland-scanner private-code ../protocol/wlr-layer-shell-unstable-v1.xml protocol/wlr-layer-shell-unstable-v1-protocol.c
+ description = Generating$ wlr_layer_shell_unstable_v1_xml_server_c$ with$ a$ custom$ command
+
+build protocol/wlr-layer-shell-unstable-v1-protocol.h: CUSTOM_COMMAND ../protocol/wlr-layer-shell-unstable-v1.xml | /usr/bin/wayland-scanner
+ COMMAND = /usr/bin/wayland-scanner server-header ../protocol/wlr-layer-shell-unstable-v1.xml protocol/wlr-layer-shell-unstable-v1-protocol.h
+ description = Generating$ wlr_layer_shell_unstable_v1_xml_server_h$ with$ a$ custom$ command
+
+build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o: c_COMPILER protocol/xdg-shell-protocol.c | protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o.d
  ARGS = -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -fPIC
 
-build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o: c_COMPILER protocol/xdg-decoration-unstable-v1-protocol.c | protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o: c_COMPILER protocol/xdg-decoration-unstable-v1-protocol.c | protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o.d
  ARGS = -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -fPIC
 
-build protocol/libclient_protos.a: STATIC_LINKER protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o
+build protocol/2ea88c7@@client_protos@sta/meson-generated_.._wlr-layer-shell-unstable-v1-protocol.c.o: c_COMPILER protocol/wlr-layer-shell-unstable-v1-protocol.c | protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
+ DEPFILE = protocol/2ea88c7@@client_protos@sta/meson-generated_.._wlr-layer-shell-unstable-v1-protocol.c.o.d
+ ARGS = -Iprotocol/2ea88c7@@client_protos@sta -Iprotocol -I../protocol -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -fPIC
+
+build protocol/libclient_protos.a: STATIC_LINKER protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-shell-protocol.c.o protocol/2ea88c7@@client_protos@sta/meson-generated_.._xdg-decoration-unstable-v1-protocol.c.o protocol/2ea88c7@@client_protos@sta/meson-generated_.._wlr-layer-shell-unstable-v1-protocol.c.o
  LINK_ARGS = csrD
 
-build laikawm@exe/util.c.o: c_COMPILER ../util.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/util.c.o: c_COMPILER ../util.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/util.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/color.c.o: c_COMPILER ../color.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/color.c.o: c_COMPILER ../color.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/color.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/cursor.c.o: c_COMPILER ../cursor.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/cursor.c.o: c_COMPILER ../cursor.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/cursor.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/input.c.o: c_COMPILER ../input.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/input.c.o: c_COMPILER ../input.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/input.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/keyboard.c.o: c_COMPILER ../keyboard.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/keyboard.c.o: c_COMPILER ../keyboard.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/keyboard.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/output.c.o: c_COMPILER ../output.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/output.c.o: c_COMPILER ../output.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/output.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/render.c.o: c_COMPILER ../render.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/render.c.o: c_COMPILER ../render.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/render.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/selection.c.o: c_COMPILER ../selection.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/selection.c.o: c_COMPILER ../selection.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/selection.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/server.c.o: c_COMPILER ../server.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/server.c.o: c_COMPILER ../server.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/server.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/surface.c.o: c_COMPILER ../surface.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/surface.c.o: c_COMPILER ../surface.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/surface.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/view.c.o: c_COMPILER ../view.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/view.c.o: c_COMPILER ../view.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/view.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/view_operations.c.o: c_COMPILER ../view_operations.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/view_operations.c.o: c_COMPILER ../view_operations.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/view_operations.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/window_decoration.c.o: c_COMPILER ../window_decoration.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/window_decoration.c.o: c_COMPILER ../window_decoration.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/window_decoration.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 
-build laikawm@exe/laikawm.c.o: c_COMPILER ../laikawm.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h
+build laikawm@exe/laikawm.c.o: c_COMPILER ../laikawm.c || protocol/xdg-shell-protocol.h protocol/xdg-decoration-unstable-v1-protocol.h protocol/wlr-layer-shell-unstable-v1-protocol.h
  DEPFILE = laikawm@exe/laikawm.c.o.d
  ARGS = -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g
 

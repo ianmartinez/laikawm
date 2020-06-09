@@ -18,7 +18,8 @@ endif
 # protocols that need to be generated
 protocols = [
 	[wl_protocol_dir, 'stable/xdg-shell/xdg-shell.xml'],
-	[wl_protocol_dir, 'unstable/xdg-decoration/xdg-decoration-unstable-v1.xml']
+	[wl_protocol_dir, 'unstable/xdg-decoration/xdg-decoration-unstable-v1.xml'],
+	['', 'wlr-layer-shell-unstable-v1.xml']
 ]
 
 # generate *.h and *.c files for protocols

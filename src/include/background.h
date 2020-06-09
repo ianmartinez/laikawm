@@ -4,10 +4,10 @@
 #include "color.h"
 
 enum lk_img_mode {
-    LK_IMG_MODE_NONE, // No scaling, anchor top-left
+    LK_IMG_MODE_TILE, // No scaling, anchor top-left and tile
     LK_IMG_MODE_CENTER, // No scaling, center image
     LK_IMG_MODE_COVER, // Scale to fit screen, respecting aspect ratio
-    LK_IMG_MODE_STRETCH // Scale to fit screen, ignoring aspect ratio
+    LK_IMG_MODE_STRETCH, // Scale to fit screen, ignoring aspect ratio
 }; 
 
 struct lk_desktop {

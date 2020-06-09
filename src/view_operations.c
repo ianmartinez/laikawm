@@ -12,6 +12,7 @@ void view_request_operation(struct lk_view *view, enum lk_cursor_mode mode, uint
         return;
     }
     server->grabbed_view = view;
+	server->has_grabbed_view = true;
     server->cursor_mode = mode;
 
     if (mode == LK_CURSOR_MOVE) {

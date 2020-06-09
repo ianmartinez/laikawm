@@ -15,9 +15,10 @@
 #include <wlr/types/wlr_seat.h>
 #include <wlr/types/wlr_xcursor_manager.h>
 #include <wlr/types/wlr_xdg_shell.h>
+#include <stdbool.h>
 
 #include "cursor_mode.h"
-#include "desktop.h"
+#include "background.h"
 #include "view.h"
 
 struct lk_server {
@@ -43,6 +44,7 @@ struct lk_server {
     struct wl_listener request_set_selection;
     struct wl_list keyboards;
     enum lk_cursor_mode cursor_mode;
+	bool has_grabbed_view;
     struct lk_view *grabbed_view;
     double grab_x, grab_y;
     struct wlr_box grab_geobox;

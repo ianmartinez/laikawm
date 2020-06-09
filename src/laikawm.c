@@ -1,3 +1,5 @@
+#include "include/os.h"
+
 #include <getopt.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -21,8 +23,6 @@
 #include <wlr/util/log.h>
 #include <xkbcommon/xkbcommon.h>
 
-#include "include/os.h"
-
 /* laikawm */
 #include "include/cursor.h"
 #include "include/input.h"
@@ -32,6 +32,7 @@
 #include "include/selection.h"
 #include "include/server.h"
 #include "include/surface.h"
+#include "include/util.h"
 #include "include/view.h"
 #include "include/view_operations.h"
 #include "include/window_decoration.h"
@@ -180,6 +181,7 @@ int main(int argc, char *argv[]) {
     /**
 	 * Set up the desktop settings.
 	 */
+    const char *test_bg = str_concat(3, getenv("HOME"), "/", "test.jpg");
     server.desktop = (struct lk_desktop){
         .initialized = true,
         .background_color = (struct lk_color){
@@ -187,7 +189,8 @@ int main(int argc, char *argv[]) {
             .g = 0.5,
             .b = 0.7,
             .a = 1.0},
-    };
+        .background_image_mode = LK_IMG_MODE_COVER,
+        .background_image_file = test_bg};
 
     /* Set the WAYLAND_DISPLAY environment variable to our socket and run the
 	 * startup command if requested. */

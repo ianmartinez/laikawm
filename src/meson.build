@@ -14,6 +14,7 @@ subdir('protocol')
 inc = include_directories('include')
 
 project_source_files = [
+  'util.c',
   'color.c',
   'cursor.c',
   'input.c',

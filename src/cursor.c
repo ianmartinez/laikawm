@@ -69,12 +69,14 @@ void process_cursor_resize(struct lk_server *server, uint32_t time) {
 
 void process_cursor_motion(struct lk_server *server, uint32_t time) {
     /* If the mode is non-passthrough, delegate to those functions. */
-    if (server->cursor_mode == LK_CURSOR_MOVE) {
-        process_cursor_move(server, time);
-        return;
-    } else if (server->cursor_mode == LK_CURSOR_RESIZE) {
-        process_cursor_resize(server, time);
-        return;
+    if (server->has_grabbed_view) {
+        if (server->cursor_mode == LK_CURSOR_MOVE) {
+            process_cursor_move(server, time);
+            return;
+        } else if (server->cursor_mode == LK_CURSOR_RESIZE) {
+            process_cursor_resize(server, time);
+            return;
+        }
     }
 
     /* Otherwise, find the view under the pointer and send the event along. */

@@ -1,4 +1,4 @@
-Build started at 2020-06-08T15:56:00.729260
+Build started at 2020-06-08T23:30:03.183949
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpkgkizxs5/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpps6tifu3
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpps6tifu3/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpps6tifu3/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpssden2rb
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpssden2rb/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpssden2rb/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpwg1e2s36/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  

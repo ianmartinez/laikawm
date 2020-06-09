@@ -8,7 +8,7 @@
 #include <wlr/types/wlr_output.h>
 
 #include "color.h"
-#include "desktop.h"
+#include "background.h"
 #include "os.h"
 #include "render.h"
 #include "server.h"

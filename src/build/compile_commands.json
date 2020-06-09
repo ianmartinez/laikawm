@@ -61,6 +61,12 @@
   },
   {
     "directory": "/home/ian/laikawm/src/build",
+    "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/layers.c.o' -MF 'laikawm@exe/layers.c.o.d' -o 'laikawm@exe/layers.c.o' -c ../layers.c",
+    "file": "../layers.c",
+    "output": "laikawm@exe/layers.c.o"
+  },
+  {
+    "directory": "/home/ian/laikawm/src/build",
     "command": "cc -Ilaikawm@exe -I. -I.. -I../include -Iprotocol -I/usr/include/libdrm -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/fribidi -I/usr/include/librsvg-2.0 -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c11 -g -pthread -DWLR_USE_UNSTABLE -g -MD -MQ 'laikawm@exe/selection.c.o' -MF 'laikawm@exe/selection.c.o.d' -o 'laikawm@exe/selection.c.o' -c ../selection.c",
     "file": "../selection.c",
     "output": "laikawm@exe/selection.c.o"

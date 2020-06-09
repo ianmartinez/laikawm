@@ -36,6 +36,7 @@
 #include "include/view.h"
 #include "include/view_operations.h"
 #include "include/window_decoration.h"
+#include "include/layers.h"
 
 int main(int argc, char *argv[]) {
     wlr_log_init(WLR_DEBUG, NULL);
@@ -58,9 +59,11 @@ int main(int argc, char *argv[]) {
     }
 
     struct lk_server server;
+
     /* The Wayland display is managed by libwayland. It handles accepting
 	 * clients from the Unix socket, manging Wayland globals, and so on. */
     server.wl_display = wl_display_create();
+    
     /* The backend is a wlroots feature which abstracts the underlying input and
 	 * output hardware. The autocreate option will choose the most suitable
 	 * backend based on the current environment, such as opening an X11 window
@@ -83,7 +86,7 @@ int main(int argc, char *argv[]) {
 	 * to dig your fingers in and play with their behavior if you want. Note that
 	 * the clients cannot set the selection directly without compositor approval,
 	 * see the handling of the request_set_selection event below.*/
-    wlr_compositor_create(server.wl_display, server.renderer);
+    server.compositor = wlr_compositor_create(server.wl_display, server.renderer);
     wlr_data_device_manager_create(server.wl_display);
 
     /* Creates an output layout, which a wlroots utility for working with an
@@ -107,6 +110,13 @@ int main(int argc, char *argv[]) {
     server.new_xdg_surface.notify = surface_recieved;
     wl_signal_add(&server.xdg_shell->events.new_surface,
                   &server.new_xdg_surface);
+
+    /**
+     * Configure layer shell.
+     */
+	server.layer_shell = wlr_layer_shell_v1_create(server.wl_display);
+	wl_signal_add(&server.layer_shell->events.new_surface, &server.layer_shell_surface);
+	server.layer_shell_surface.notify = handle_layer_shell_surface;
 
     /*
 	 * Creates a cursor, which is a wlroots utility for tracking the cursor

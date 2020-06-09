@@ -2,6 +2,7 @@
 #define LK_SERVER_H
 
 #include <wayland-server-core.h>
+#include <wayland-server-protocol.h>
 #include <wlr/backend.h>
 #include <wlr/render/wlr_renderer.h>
 #include <wlr/types/wlr_compositor.h>
@@ -15,6 +16,7 @@
 #include <wlr/types/wlr_seat.h>
 #include <wlr/types/wlr_xcursor_manager.h>
 #include <wlr/types/wlr_xdg_shell.h>
+#include <wlr/types/wlr_layer_shell_v1.h>
 #include <stdbool.h>
 
 #include "cursor_mode.h"
@@ -25,9 +27,12 @@ struct lk_server {
     struct wl_display *wl_display;
     struct wlr_backend *backend;
     struct wlr_renderer *renderer;
+    struct wlr_compositor *compositor;
 
     struct wlr_xdg_shell *xdg_shell;
     struct wl_listener new_xdg_surface;
+	struct wlr_layer_shell_v1 *layer_shell;
+	struct wl_listener layer_shell_surface;
     struct wl_list views;
 
     struct wlr_cursor *cursor;

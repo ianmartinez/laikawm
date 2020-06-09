@@ -21,6 +21,7 @@ project_source_files = [
   'keyboard.c',
   'output.c',
   'render.c',
+  'layers.c',
   'selection.c',
   'server.c',
   'surface.c',
@@ -32,6 +33,7 @@ project_source_files = [
 
 project_dependencies = [
   dependency('wlroots'),
+  dependency('wayland-client'),
   dependency('wayland-server'),
   dependency('xkbcommon'),
   dependency('gdk-pixbuf-2.0'),

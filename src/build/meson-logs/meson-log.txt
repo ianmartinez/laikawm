@@ -1,4 +1,4 @@
-Build started at 2020-06-09T14:15:19.452960
+Build started at 2020-06-09T16:39:47.218984
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -120,8 +120,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp7fyp1eu_/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpv18wreh5
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpv18wreh5/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpv18wreh5/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
 
 Code:
  #include<stdio.h>
@@ -142,8 +142,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp_r432zw9
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp_r432zw9/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp_r432zw9/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  
@@ -155,6 +155,22 @@ libraries: =/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linu
 Compiler stderr:
  
 Run-time dependency wlroots found: YES 0.10.1
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'wayland-client' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion wayland-client` -> 0
+1.18.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags wayland-client` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-client --libs` -> 0
+-L/usr/lib64 -lwayland-client
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config wayland-client --libs` -> 0
+-lwayland-client
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Run-time dependency wayland-client found: YES 1.18.0
 Pkg-config binary for MachineChoice.HOST is cached.
 Determining dependency 'wayland-server' with pkg-config executable '/usr/bin/pkg-config'
 PKG_CONFIG_PATH: 
@@ -267,8 +283,8 @@ Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp8u2d38pm/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpacevzl9q
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpacevzl9q/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpacevzl9q/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }

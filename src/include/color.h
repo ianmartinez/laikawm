@@ -8,4 +8,6 @@ struct lk_color {
     float a;
 };
 
+void lk_color_to_array(struct lk_color *color, float array[static 4]);
+
 #endif

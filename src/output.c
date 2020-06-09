@@ -63,9 +63,9 @@ void output_frame(struct wl_listener *listener, void *data) {
 
     struct lk_desktop desktop = output->server->desktop;
     if(desktop.initialized) {
-        struct lk_color bg_color = desktop.background_color;
-        float color_array[4] = {bg_color.r, bg_color.g, bg_color.b, bg_color.a};
-        wlr_renderer_clear(renderer, color_array);
+        float bg_color_array[4];
+		lk_color_to_array(&desktop.background_color, bg_color_array);
+        wlr_renderer_clear(renderer, bg_color_array);
     }
 
 	/* Each subsequent window we render is rendered on top of the last. Because

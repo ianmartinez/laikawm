@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <wayland-server-core.h>
+
 #include "server.h"
 #include "view_operations.h"
 

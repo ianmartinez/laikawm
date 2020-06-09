@@ -1,45 +1,45 @@
 #include "include/view_operations.h"
 
 void view_request_operation(struct lk_view *view, enum lk_cursor_mode mode, uint32_t edges) {
-	/* This function sets up an interactive move or resize operation, where the
+    /* This function sets up an interactive move or resize operation, where the
 	 * compositor stops propegating pointer events to clients and instead
 	 * consumes them itself, to move or resize windows. */
-	struct lk_server *server = view->server;
-	struct wlr_surface *focused_surface =
-		server->seat->pointer_state.focused_surface;
-	if (view->xdg_surface->surface != focused_surface) {
-		/* Deny move/resize requests from unfocused clients. */
-		return;
-	}
-	server->grabbed_view = view;
-	server->cursor_mode = mode;
+    struct lk_server *server = view->server;
+    struct wlr_surface *focused_surface =
+        server->seat->pointer_state.focused_surface;
+    if (view->xdg_surface->surface != focused_surface) {
+        /* Deny move/resize requests from unfocused clients. */
+        return;
+    }
+    server->grabbed_view = view;
+    server->cursor_mode = mode;
 
-	if (mode == LK_CURSOR_MOVE) {
+    if (mode == LK_CURSOR_MOVE) {
         view_move(server, view);
-	} else {
+    } else {
         view_resize(server, view, edges);
-	}
+    }
 }
 
 void view_request_move(struct wl_listener *listener, void *data) {
-	/* This event is raised when a client would like to begin an interactive
+    /* This event is raised when a client would like to begin an interactive
 	 * move, typically because the user clicked on their client-side
 	 * decorations. Note that a more sophisticated compositor should check the
 	 * provied serial against a list of button press serials sent to this
 	 * client, to prevent the client from requesting this whenever they want. */
-	struct lk_view *view = wl_container_of(listener, view, request_move);
-	view_request_operation(view, LK_CURSOR_MOVE, 0);
+    struct lk_view *view = wl_container_of(listener, view, request_move);
+    view_request_operation(view, LK_CURSOR_MOVE, 0);
 }
 
 void view_request_resize(struct wl_listener *listener, void *data) {
-	/* This event is raised when a client would like to begin an interactive
+    /* This event is raised when a client would like to begin an interactive
 	 * resize, typically because the user clicked on their client-side
 	 * decorations. Note that a more sophisticated compositor should check the
 	 * provied serial against a list of button press serials sent to this
 	 * client, to prevent the client from requesting this whenever they want. */
-	struct wlr_xdg_toplevel_resize_event *event = data;
-	struct lk_view *view = wl_container_of(listener, view, request_resize);
-	view_request_operation(view, LK_CURSOR_RESIZE, event->edges);
+    struct wlr_xdg_toplevel_resize_event *event = data;
+    struct lk_view *view = wl_container_of(listener, view, request_resize);
+    view_request_operation(view, LK_CURSOR_RESIZE, event->edges);
 }
 
 void view_move(struct lk_server *server, struct lk_view *view) {

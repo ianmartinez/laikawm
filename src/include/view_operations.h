@@ -2,6 +2,7 @@
 #define LK_VIEW_OPERATION_H
 
 #include <wayland-util.h>
+
 #include "cursor_mode.h"
 #include "server.h"
 #include "view.h"

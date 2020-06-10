@@ -1,4 +1,4 @@
-Build started at 2020-06-09T16:39:47.218984
+Build started at 2020-06-09T21:40:51.734389
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -29,6 +29,23 @@ Running test binary command: /home/ian/laikawm/src/build/meson-private/sanityche
 C compiler for the build machine: cc (gcc 10.1.1 "cc (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
 C linker for the build machine: cc ld.bfd 2.34-3
 None of 'AR' are defined in the environment, not changing global flags.
+None of 'CXX' are defined in the environment, not changing global flags.
+None of 'CXXFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CXX_LD' are defined in the environment, not changing global flags.
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.cc -o /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.exe
+C++ compiler for the build machine: c++ (gcc 10.1.1 "c++ (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
+C++ linker for the build machine: c++ ld.bfd 2.34-3
 None of 'CC' are defined in the environment, not changing global flags.
 None of 'CFLAGS' are defined in the environment, not changing global flags.
 None of 'LDFLAGS' are defined in the environment, not changing global flags.
@@ -47,6 +64,23 @@ Running test binary command: /home/ian/laikawm/src/build/meson-private/sanityche
 C compiler for the host machine: cc (gcc 10.1.1 "cc (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
 C linker for the host machine: cc ld.bfd 2.34-3
 None of 'AR' are defined in the environment, not changing global flags.
+None of 'CXX' are defined in the environment, not changing global flags.
+None of 'CXXFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CXX_LD' are defined in the environment, not changing global flags.
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.cc -o /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/ian/laikawm/src/build/meson-private/sanitycheckcpp.exe
+C++ compiler for the host machine: c++ (gcc 10.1.1 "c++ (GCC) 10.1.1 20200507 (Red Hat 10.1.1-1)")
+C++ linker for the host machine: c++ ld.bfd 2.34-3
 Build machine cpu family: x86_64
 Build machine cpu: x86_64
 Host machine cpu family: x86_64
@@ -120,8 +154,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpv18wreh5
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpv18wreh5/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpv18wreh5/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpp2abzull
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmpp2abzull/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmpp2abzull/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
 
 Code:
  #include<stdio.h>
@@ -142,8 +176,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmp0_y5a4ad/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp8l8qpekc
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmp8l8qpekc/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmp8l8qpekc/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  
@@ -283,8 +317,8 @@ Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpacevzl9q
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpacevzl9q/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpacevzl9q/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpw1rx436k
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmpw1rx436k/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmpw1rx436k/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }
@@ -312,5 +346,29 @@ Run-time dependency expat found: YES 2.2.8
 Build targets in project: 8
 
 Found ninja-1.10.0 at /usr/bin/ninja
+Running compile:
+Working directory:  /tmp/tmp67fvgf90
+Command line:  c++ /tmp/tmp67fvgf90/testfile.cpp -o /tmp/tmp67fvgf90/output.obj -pipe -D_FILE_OFFSET_BITS=64 -c -std=c++14 
+
+Code:
+ int i = static_cast<int>(0);
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler accepts -std=c++14: YES
+Running compile:
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpzvtxizj_
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpzvtxizj_/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpzvtxizj_/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-redhat-linux/10/
+programs: =/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/10/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/bin/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/bin/
+libraries: =/usr/lib/gcc/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/lib/x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../x86_64-redhat-linux/10/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../lib64/:/lib/x86_64-redhat-linux/10/:/lib/../lib64/:/usr/lib/x86_64-redhat-linux/10/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../../x86_64-redhat-linux/lib/:/usr/lib/gcc/x86_64-redhat-linux/10/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
 None of 'STRIP' are defined in the environment, not changing global flags.
 None of 'STRIP' are defined in the environment, not changing global flags.

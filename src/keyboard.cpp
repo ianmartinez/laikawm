@@ -27,6 +27,7 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
 
     /* Translate libinput keycode -> xkbcommon */
     uint32_t keycode = event->keycode + 8;
+
     /* Get a list of keysyms based on the keymap for this keyboard */
     const xkb_keysym_t *syms;
     int nsyms = xkb_state_key_get_syms(
@@ -34,11 +35,13 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
 
     bool handled = false;
     uint32_t modifiers = wlr_keyboard_get_modifiers(keyboard->device->keyboard);
-    if ((modifiers & WLR_MODIFIER_ALT) && event->state == WLR_KEY_PRESSED) {
+    if (event->state == WLR_KEY_PRESSED) {
         /* If alt is held down and this button was _pressed_, we attempt to
 		 * process it as a compositor keybinding. */
-        for (int i = 0; i < nsyms; i++) {
-            handled = server->handle_keybinding(syms[i]);
+        if ((modifiers & WLR_MODIFIER_LOGO)) {
+            for (int i = 0; i < nsyms; i++) {
+                handled = server->handle_keybinding(modifiers, syms[i]);
+            }
         }
     }
 

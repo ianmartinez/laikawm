@@ -1,4 +1,5 @@
 #include "include/server.hpp"
+
 #include "include/keyboard.hpp"
 
 lk_view *lk_server::view_at(double lx, double ly, struct wlr_surface **surface,
@@ -159,18 +160,22 @@ void lk_server::keyboard_added(struct wlr_input_device *device) {
     wl_list_insert(&this->keyboards, &keyboard->link);
 }
 
-bool lk_server::handle_keybinding(xkb_keysym_t sym) {
+bool lk_server::handle_keybinding(uint32_t modifiers, xkb_keysym_t sym) {
     /*
 	 * Here we handle compositor keybindings. This is when the compositor is
 	 * processing keys, rather than passing them on to the client for its own
 	 * processing.
 	 *
-	 * This function assumes Alt is held down.
+	 * This function assumes LOGO is held down.
 	 */
     switch (sym) {
-        case XKB_KEY_Escape:
+        case XKB_KEY_Escape:  // LOGO + ESC = Kill LaikaWM
             wl_display_terminate(this->wl_display);
             break;
+        case XKB_KEY_n: { // Nemo is a good test program
+            system(("WAYLAND_DISPLAY=" + this->display_socket + " nemo").c_str());
+            break;
+        }
         default:
             return false;
     }

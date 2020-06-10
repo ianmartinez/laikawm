@@ -199,8 +199,8 @@ int main(int argc, char *argv[]) {
 	 * compositor. Starting the backend rigged up all of the necessary event
 	 * loop configuration to listen to libinput events, DRM events, generate
 	 * frame events at the refresh rate, and so on. */
-    wlr_log(WLR_INFO, "Running Wayland compositor on WAYLAND_DISPLAY=%s",
-            socket);
+    wlr_log(WLR_INFO, "Running Wayland compositor on WAYLAND_DISPLAY=%s", socket);
+    server.display_socket = std::string(socket);
     wl_display_run(server.wl_display);
 
     /* Once wl_display_run returns, we shut down the server. */

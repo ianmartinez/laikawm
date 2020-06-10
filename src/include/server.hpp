@@ -16,6 +16,7 @@ class lk_view;
 class lk_server {
    public:
     struct wl_display *wl_display;
+    std::string display_socket;
     struct wlr_backend *backend;
     struct wlr_renderer *renderer;
     struct wlr_compositor *compositor;
@@ -66,7 +67,7 @@ class lk_server {
     /**
      * Keyboard
      */
-    bool handle_keybinding(xkb_keysym_t sym);
+    bool handle_keybinding(uint32_t modifiers, xkb_keysym_t sym);
     void keyboard_added(struct wlr_input_device *device);
 };
 

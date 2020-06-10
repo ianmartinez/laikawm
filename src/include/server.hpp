@@ -55,10 +55,19 @@ class lk_server {
     lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
                      double *sx, double *sy);
 
+    /**
+     * Mouse 
+     */
     void pointer_added(struct wlr_input_device *device);
     void cursor_move_view(uint32_t time);
     void cursor_resize_view(uint32_t time);
     void process_cursor_motion(uint32_t time);
+
+    /**
+     * Keyboard
+     */
+    bool handle_keybinding(xkb_keysym_t sym);
+    void keyboard_added(struct wlr_input_device *device);
 };
 
 #endif

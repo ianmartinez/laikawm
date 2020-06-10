@@ -17,24 +17,6 @@ void keyboard_handle_modifiers(struct wl_listener *listener, void *data) {
                                        &keyboard->device->keyboard->modifiers);
 }
 
-bool handle_keybinding(lk_server *server, xkb_keysym_t sym) {
-    /*
-	 * Here we handle compositor keybindings. This is when the compositor is
-	 * processing keys, rather than passing them on to the client for its own
-	 * processing.
-	 *
-	 * This function assumes Alt is held down.
-	 */
-    switch (sym) {
-        case XKB_KEY_Escape:
-            wl_display_terminate(server->wl_display);
-            break;
-        default:
-            return false;
-    }
-    return true;
-}
-
 void keyboard_handle_key(struct wl_listener *listener, void *data) {
     /* This event is raised when a key is pressed or released. */
     struct lk_keyboard *keyboard =
@@ -56,7 +38,7 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
         /* If alt is held down and this button was _pressed_, we attempt to
 		 * process it as a compositor keybinding. */
         for (int i = 0; i < nsyms; i++) {
-            handled = handle_keybinding(server, syms[i]);
+            handled = server->handle_keybinding(syms[i]);
         }
     }
 
@@ -66,32 +48,4 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
         wlr_seat_keyboard_notify_key(seat, event->time_msec,
                                      event->keycode, event->state);
     }
-}
-
-void server_new_keyboard(lk_server *server, struct wlr_input_device *device) {
-    auto keyboard = (struct lk_keyboard *)calloc(1, sizeof(struct lk_keyboard));
-    keyboard->server = server;
-    keyboard->device = device;
-
-    /* We need to prepare an XKB keymap and assign it to the keyboard. This
-	 * assumes the defaults (e.g. layout = "us"). */
-    struct xkb_rule_names rules = {0};
-    struct xkb_context *context = xkb_context_new(XKB_CONTEXT_NO_FLAGS);
-    struct xkb_keymap *keymap = xkb_map_new_from_names(context, &rules, XKB_KEYMAP_COMPILE_NO_FLAGS);
-
-    wlr_keyboard_set_keymap(device->keyboard, keymap);
-    xkb_keymap_unref(keymap);
-    xkb_context_unref(context);
-    wlr_keyboard_set_repeat_info(device->keyboard, 25, 600);
-
-    /* Here we set up listeners for keyboard events. */
-    keyboard->modifiers.notify = keyboard_handle_modifiers;
-    wl_signal_add(&device->keyboard->events.modifiers, &keyboard->modifiers);
-    keyboard->key.notify = keyboard_handle_key;
-    wl_signal_add(&device->keyboard->events.key, &keyboard->key);
-
-    wlr_seat_set_keyboard(server->seat, device);
-
-    /* And add the keyboard to our list of keyboards */
-    wl_list_insert(&server->keyboards, &keyboard->link);
 }

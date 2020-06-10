@@ -7,7 +7,7 @@ void server_new_input(struct wl_listener *listener, void *data) {
     auto device = (struct wlr_input_device *)data;
     switch (device->type) {
         case WLR_INPUT_DEVICE_KEYBOARD:
-            server_new_keyboard(server, device);
+            server->keyboard_added(device);
             break;
         case WLR_INPUT_DEVICE_POINTER:
             server->pointer_added(device);

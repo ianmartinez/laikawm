@@ -1,4 +1,4 @@
-Build started at 2020-06-10T12:08:51.389290
+Build started at 2020-06-10T13:23:34.523318
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -154,8 +154,8 @@ Called `/usr/bin/pkg-config wlroots --libs` -> 0
 -lwlroots
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpxqfgs2y9
-Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmpxqfgs2y9/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmpxqfgs2y9/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp4w02somc
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmp4w02somc/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmp4w02somc/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
 
 Code:
  #include<stdio.h>
@@ -176,8 +176,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmplxnauv7y
-Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmplxnauv7y/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmplxnauv7y/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmp77g43dm7
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmp77g43dm7/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmp77g43dm7/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  
@@ -317,8 +317,8 @@ Called `/usr/bin/pkg-config librsvg-2.0 --libs` -> 0
 -lrsvg-2 -lm -lgio-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lglib-2.0 -lcairo
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmp80ogo4ty
-Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmp80ogo4ty/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmp80ogo4ty/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpisln5nu9
+Command line:  c++ /home/ian/laikawm/src/build/meson-private/tmpisln5nu9/testfile.cpp -o /home/ian/laikawm/src/build/meson-private/tmpisln5nu9/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
 
 Code:
  int main(void) { return 0; }
@@ -347,8 +347,8 @@ Build targets in project: 8
 
 Found ninja-1.10.0 at /usr/bin/ninja
 Running compile:
-Working directory:  /tmp/tmpay_l079f
-Command line:  c++ /tmp/tmpay_l079f/testfile.cpp -o /tmp/tmpay_l079f/output.obj -pipe -D_FILE_OFFSET_BITS=64 -c -std=c++17 
+Working directory:  /tmp/tmplz62_jqd
+Command line:  c++ /tmp/tmplz62_jqd/testfile.cpp -o /tmp/tmplz62_jqd/output.obj -pipe -D_FILE_OFFSET_BITS=64 -c -std=c++17 
 
 Code:
  int i = static_cast<int>(0);
@@ -358,8 +358,8 @@ Compiler stderr:
  
 Compiler accepts -std=c++17: YES
 Running compile:
-Working directory:  /home/ian/laikawm/src/build/meson-private/tmpngn3qxm1
-Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpngn3qxm1/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpngn3qxm1/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+Working directory:  /home/ian/laikawm/src/build/meson-private/tmpliosrml2
+Command line:  cc /home/ian/laikawm/src/build/meson-private/tmpliosrml2/testfile.c -o /home/ian/laikawm/src/build/meson-private/tmpliosrml2/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
 
 Code:
  

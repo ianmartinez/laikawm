@@ -2,25 +2,8 @@
 
 #include <list>
 
-#include "include/util.hpp"
-
-lk_view *lk_view::get_view_at(lk_server *server, double lx, double ly,
-                              struct wlr_surface **surface, double *sx, double *sy) {
-    /* This iterates over all of our surfaces and attempts to find one under the
-	 * cursor. This relies on server->views being ordered from top-to-bottom. */
-
-    for (auto it = server->views.begin(); it != server->views.end(); ++it) {
-        lk_view *view = *it;
-        if (view->exists_at(lx, ly, surface, sx, sy)) {
-            return view;
-        }
-    }
-
-    return NULL;
-}
-
-bool lk_view::exists_at(double lx, double ly,
-                             struct wlr_surface **surface, double *sx, double *sy) {
+bool lk_view::exists_at(double lx, double ly, struct wlr_surface **surface,
+                        double *sx, double *sy) {
     /*
 	 * XDG toplevels may have nested surfaces, such as popup windows for context
 	 * menus or tooltips. This function tests if any of those are underneath the

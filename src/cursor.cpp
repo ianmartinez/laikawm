@@ -83,8 +83,7 @@ void process_cursor_motion(lk_server *server, uint32_t time) {
     double sx, sy;
     struct wlr_seat *seat = server->seat;
     struct wlr_surface *surface = NULL;
-    lk_view *view = lk_view::get_view_at(server,
-                                         server->cursor->x, server->cursor->y, &surface, &sx, &sy);
+    lk_view *view = server->view_at(server->cursor->x, server->cursor->y, &surface, &sx, &sy);
     if (!view) {
         /* If there's no view under the cursor, set the cursor image to a
 		 * default. This is what makes the cursor image appear when you move it
@@ -156,8 +155,7 @@ void server_cursor_button(struct wl_listener *listener, void *data) {
                                    event->time_msec, event->button, event->state);
     double sx, sy;
     struct wlr_surface *surface;
-    lk_view *view = lk_view::get_view_at(server,
-                                                server->cursor->x, server->cursor->y, &surface, &sx, &sy);
+    lk_view *view = server->view_at(server->cursor->x, server->cursor->y, &surface, &sx, &sy);
     if (event->state == WLR_BUTTON_RELEASED) {
         /* If you released any buttons, we exit interactive move/resize mode. */
         server->cursor_mode = LK_CURSOR_PASSTHROUGH;

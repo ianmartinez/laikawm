@@ -20,10 +20,7 @@ class lk_view {
     struct wl_listener request_resize;
     bool mapped;
     int x, y;
-
-    static lk_view *get_view_at(lk_server *server, double lx, double ly,
-                                struct wlr_surface **surface, double *sx, double *sy);
-
+    
     bool exists_at(double lx, double ly, struct wlr_surface **surface,
                         double *sx, double *sy);
 

@@ -1,9 +1,10 @@
 #ifndef LK_SERVER_H
 #define LK_SERVER_H
 
-#include <list>
 #include <wayland-server-core.h>
 #include <wayland-server-protocol.h>
+
+#include <list>
 
 #include "background.hpp"
 #include "cursor_mode.hpp"
@@ -14,7 +15,6 @@ class lk_view;
 
 class lk_server {
    public:
-
     struct wl_display *wl_display;
     struct wlr_backend *backend;
     struct wlr_renderer *renderer;
@@ -23,8 +23,8 @@ class lk_server {
     struct wlr_xdg_shell *xdg_shell;
     struct wl_listener new_xdg_surface;
     struct wlr_layer_shell_v1 *layer_shell;
-    struct wl_listener layer_shell_surface;    
-	std::list<lk_view*> views;
+    struct wl_listener layer_shell_surface;
+    std::list<lk_view *> views;
 
     struct wlr_cursor *cursor;
     struct wlr_xcursor_manager *cursor_mgr;
@@ -51,6 +51,9 @@ class lk_server {
     struct wl_listener new_output;
 
     struct lk_desktop desktop;
+
+    lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
+                         double *sx, double *sy);
 };
 
 #endif

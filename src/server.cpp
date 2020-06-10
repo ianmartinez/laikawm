@@ -160,6 +160,13 @@ void lk_server::keyboard_added(struct wlr_input_device *device) {
     wl_list_insert(&this->keyboards, &keyboard->link);
 }
 
+void lk_server::launch_program(std::string program_name) {
+    auto prog_launch_cmd = "WAYLAND_DISPLAY=" + this->display_socket + " " + program_name + " &";
+    wlr_log(WLR_INFO, "Launching %s:\n%s", program_name.c_str(), prog_launch_cmd.c_str());
+
+    system(prog_launch_cmd.c_str());
+}
+
 bool lk_server::handle_keybinding(uint32_t modifiers, xkb_keysym_t sym) {
     /*
 	 * Here we handle compositor keybindings. This is when the compositor is
@@ -172,10 +179,12 @@ bool lk_server::handle_keybinding(uint32_t modifiers, xkb_keysym_t sym) {
         case XKB_KEY_Escape:  // LOGO + ESC = Kill LaikaWM
             wl_display_terminate(this->wl_display);
             break;
-        case XKB_KEY_n: { // Nemo is a good test program
-            system(("WAYLAND_DISPLAY=" + this->display_socket + " nemo").c_str());
+        case XKB_KEY_n:  // Nemo is a good test program
+            launch_program("nemo");
             break;
-        }
+        case XKB_KEY_c:  // As is gnome-terminal
+            launch_program("gnome-terminal");
+            break;
         default:
             return false;
     }

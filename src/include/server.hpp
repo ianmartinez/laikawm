@@ -55,7 +55,7 @@ class lk_server {
 
     lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
                      double *sx, double *sy);
-
+    void launch_program(std::string program_name);
     /**
      * Mouse 
      */

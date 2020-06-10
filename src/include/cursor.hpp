@@ -7,10 +7,6 @@
 #include "server.hpp"
 #include "view.hpp"
 
-void server_new_pointer(lk_server *server, struct wlr_input_device *device);
-void process_cursor_move(lk_server *server, uint32_t time);
-void process_cursor_resize(lk_server *server, uint32_t time);
-void process_cursor_motion(lk_server *server, uint32_t time);
 void server_cursor_motion(struct wl_listener *listener, void *data);
 void server_cursor_motion_absolute(struct wl_listener *listener, void *data);
 void server_cursor_button(struct wl_listener *listener, void *data);

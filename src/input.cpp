@@ -10,7 +10,7 @@ void server_new_input(struct wl_listener *listener, void *data) {
             server_new_keyboard(server, device);
             break;
         case WLR_INPUT_DEVICE_POINTER:
-            server_new_pointer(server, device);
+            server->pointer_added(device);
             break;
         default:
             break;

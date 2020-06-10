@@ -53,7 +53,12 @@ class lk_server {
     lk_desktop desktop;
 
     lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
-                         double *sx, double *sy);
+                     double *sx, double *sy);
+
+    void pointer_added(struct wlr_input_device *device);
+    void cursor_move_view(uint32_t time);
+    void cursor_resize_view(uint32_t time);
+    void process_cursor_motion(uint32_t time);
 };
 
 #endif

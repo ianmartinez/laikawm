@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    struct lk_server server;
+    lk_server server;
 
     /* The Wayland display is managed by libwayland. It handles accepting
 	 * clients from the Unix socket, manging Wayland globals, and so on. */
@@ -93,7 +93,6 @@ int main(int argc, char *argv[]) {
 	 *
 	 * https://drewdevault.com/2018/07/29/Wayland-shells.html
 	 */
-    wl_list_init(&server.views);
     server.xdg_shell = wlr_xdg_shell_create(server.wl_display);
     server.new_xdg_surface.notify = surface_recieved;
     wl_signal_add(&server.xdg_shell->events.new_surface,

@@ -3,7 +3,7 @@
 void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
     /* This function is called for every surface that needs to be rendered. */
     auto rdata = (struct lk_render_data *)data;
-    struct lk_view *view = rdata->view;
+    lk_view *view = rdata->view;
     struct wlr_output *output = rdata->output;
 
     /* We first obtain a wlr_texture, which is a GPU resource. wlroots

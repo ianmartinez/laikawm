@@ -2,7 +2,7 @@ project(
     'laikawm', 
     'c', 'cpp',
     version: '0.0.1',
-    default_options: ['c_std=c11', 'cpp_std=c++14']
+    default_options: ['c_std=c11', 'cpp_std=c++17']
 )
 
 build_args = [

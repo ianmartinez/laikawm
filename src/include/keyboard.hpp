@@ -10,7 +10,7 @@
 
 struct lk_keyboard {
     struct wl_list link;
-    struct lk_server *server;
+    lk_server *server;
     struct wlr_input_device *device;
 
     struct wl_listener modifiers;
@@ -18,8 +18,8 @@ struct lk_keyboard {
 };
 
 void keyboard_handle_modifiers(struct wl_listener *listener, void *data);
-bool handle_keybinding(struct lk_server *server, xkb_keysym_t sym);
+bool handle_keybinding(lk_server *server, xkb_keysym_t sym);
 void keyboard_handle_key(struct wl_listener *listener, void *data);
-void server_new_keyboard(struct lk_server *server, struct wlr_input_device *device);
+void server_new_keyboard(lk_server *server, struct wlr_input_device *device);
 
 #endif

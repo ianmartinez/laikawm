@@ -1,10 +1,10 @@
 #include "include/view_operations.hpp"
 
-void view_request_operation(struct lk_view *view, enum lk_cursor_mode mode, uint32_t edges) {
+void view_request_operation(lk_view *view, enum lk_cursor_mode mode, uint32_t edges) {
     /* This function sets up an interactive move or resize operation, where the
 	 * compositor stops propegating pointer events to clients and instead
 	 * consumes them itself, to move or resize windows. */
-    struct lk_server *server = view->server;
+    lk_server *server = view->server;
     struct wlr_surface *focused_surface =
         server->seat->pointer_state.focused_surface;
     if (view->xdg_surface->surface != focused_surface) {
@@ -28,7 +28,7 @@ void view_request_move(struct wl_listener *listener, void *data) {
 	 * decorations. Note that a more sophisticated compositor should check the
 	 * provied serial against a list of button press serials sent to this
 	 * client, to prevent the client from requesting this whenever they want. */
-    struct lk_view *view = wl_container_of(listener, view, request_move);
+    lk_view *view = wl_container_of(listener, view, request_move);
     view_request_operation(view, LK_CURSOR_MOVE, 0);
 }
 
@@ -39,16 +39,16 @@ void view_request_resize(struct wl_listener *listener, void *data) {
 	 * provied serial against a list of button press serials sent to this
 	 * client, to prevent the client from requesting this whenever they want. */
     auto event = (struct wlr_xdg_toplevel_resize_event *)data;
-    struct lk_view *view = wl_container_of(listener, view, request_resize);
+    lk_view *view = wl_container_of(listener, view, request_resize);
     view_request_operation(view, LK_CURSOR_RESIZE, event->edges);
 }
 
-void view_move(struct lk_server *server, struct lk_view *view) {
+void view_move(lk_server *server, lk_view *view) {
     server->grab_x = server->cursor->x - view->x;
     server->grab_y = server->cursor->y - view->y;
 }
 
-void view_resize(struct lk_server *server, struct lk_view *view, uint32_t edges) {
+void view_resize(lk_server *server, lk_view *view, uint32_t edges) {
     struct wlr_box geo_box;
     wlr_xdg_surface_get_geometry(view->xdg_surface, &geo_box);
 

@@ -7,10 +7,10 @@
 #include "server.hpp"
 #include "view.hpp"
 
-void view_request_operation(struct lk_view *view, enum lk_cursor_mode mode, uint32_t edges);
+void view_request_operation(lk_view *view, enum lk_cursor_mode mode, uint32_t edges);
 void view_request_move(struct wl_listener *listener, void *data);
 void view_request_resize(struct wl_listener *listener, void *data);
-void view_move(struct lk_server *server, struct lk_view *view);
-void view_resize(struct lk_server *server, struct lk_view *view, uint32_t edges);
+void view_move(lk_server *server, lk_view *view);
+void view_resize(lk_server *server, lk_view *view, uint32_t edges);
 
 #endif

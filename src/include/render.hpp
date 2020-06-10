@@ -16,7 +16,7 @@
 struct lk_render_data {
     struct wlr_output *output;
     struct wlr_renderer *renderer;
-    struct lk_view *view;
+    lk_view *view;
     struct timespec *when;
 };
 

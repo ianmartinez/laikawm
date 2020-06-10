@@ -15,7 +15,7 @@
 
 struct lk_output {
     struct wl_list link;
-    struct lk_server *server;
+    lk_server *server;
     struct wlr_output *wlr_output;
     struct wl_listener frame;
 };

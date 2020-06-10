@@ -6,9 +6,12 @@
 #include "server.hpp"
 #include "wl_includes.hpp"
 
-struct lk_view {
+class lk_server;
+
+class lk_view {
+   public:
     struct wl_list link;
-    struct lk_server *server;
+    lk_server *server;
     struct wlr_xdg_surface *xdg_surface;
     struct wl_listener map;
     struct wl_listener unmap;
@@ -17,16 +20,14 @@ struct lk_view {
     struct wl_listener request_resize;
     bool mapped;
     int x, y;
+
+    static lk_view *get_view_at(lk_server *server, double lx, double ly,
+                                struct wlr_surface **surface, double *sx, double *sy);
+
+    bool exists_at(double lx, double ly, struct wlr_surface **surface,
+                        double *sx, double *sy);
+
+    void focus(struct wlr_surface *surface);
 };
-
-struct lk_view *desktop_view_at(
-    struct lk_server *server, double lx, double ly,
-    struct wlr_surface **surface, double *sx, double *sy);
-
-bool view_at(struct lk_view *view,
-             double lx, double ly, struct wlr_surface **surface,
-             double *sx, double *sy);
-
-void focus_view(struct lk_view *view, struct wlr_surface *surface);
 
 #endif

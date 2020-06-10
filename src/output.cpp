@@ -1,9 +1,10 @@
 #include "include/output.hpp"
+#include <list>
 
 void output_add(struct wl_listener *listener, void *data) {
     /* This event is rasied by the backend when a new output (aka a display or
 	 * monitor) becomes available. */
-    struct lk_server *server = wl_container_of(listener, server, new_output);
+    lk_server *server = wl_container_of(listener, server, new_output);
     auto wlr_output = (struct wlr_output *)data;
 
     /* Some backends don't have modes. DRM+KMS does, and we need to set a mode
@@ -70,8 +71,10 @@ void output_frame(struct wl_listener *listener, void *data) {
 
     /* Each subsequent window we render is rendered on top of the last. Because
 	 * our view list is ordered front-to-back, we iterate over it backwards. */
-    struct lk_view *view;
-    wl_list_for_each_reverse(view, &output->server->views, link) {
+    std::list<lk_view*> views = output->server->views;
+    for (auto view_iter = views.rbegin(); view_iter != views.rend(); ++view_iter) {
+        lk_view *view = *view_iter;
+
         if (!view->mapped) {
             /* An unmapped view should not be rendered. */
             continue;

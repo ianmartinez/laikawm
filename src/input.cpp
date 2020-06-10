@@ -3,7 +3,7 @@
 void server_new_input(struct wl_listener *listener, void *data) {
     /* This event is raised by the backend when a new input device becomes
 	 * available. */
-    struct lk_server *server = wl_container_of(listener, server, new_input);
+    lk_server *server = wl_container_of(listener, server, new_input);
     auto device = (struct wlr_input_device *)data;
     switch (device->type) {
         case WLR_INPUT_DEVICE_KEYBOARD:

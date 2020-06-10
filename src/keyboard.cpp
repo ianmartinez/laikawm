@@ -17,7 +17,7 @@ void keyboard_handle_modifiers(struct wl_listener *listener, void *data) {
                                        &keyboard->device->keyboard->modifiers);
 }
 
-bool handle_keybinding(struct lk_server *server, xkb_keysym_t sym) {
+bool handle_keybinding(lk_server *server, xkb_keysym_t sym) {
     /*
 	 * Here we handle compositor keybindings. This is when the compositor is
 	 * processing keys, rather than passing them on to the client for its own
@@ -29,21 +29,6 @@ bool handle_keybinding(struct lk_server *server, xkb_keysym_t sym) {
         case XKB_KEY_Escape:
             wl_display_terminate(server->wl_display);
             break;
-        case XKB_KEY_F1: {
-            /* Cycle to the next view */
-            if (wl_list_length(&server->views) < 2) {
-                break;
-            }
-            struct lk_view *current_view = wl_container_of(
-                server->views.next, current_view, link);
-            struct lk_view *next_view = wl_container_of(
-                current_view->link.next, next_view, link);
-            focus_view(next_view, next_view->xdg_surface->surface);
-            /* Move the previous view to the end of the list */
-            wl_list_remove(&current_view->link);
-            wl_list_insert(server->views.prev, &current_view->link);
-            break;
-        }
         default:
             return false;
     }
@@ -54,7 +39,7 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
     /* This event is raised when a key is pressed or released. */
     struct lk_keyboard *keyboard =
         wl_container_of(listener, keyboard, key);
-    struct lk_server *server = keyboard->server;
+    lk_server *server = keyboard->server;
     auto event = (struct wlr_event_keyboard_key *)data;
     struct wlr_seat *seat = server->seat;
 
@@ -83,7 +68,7 @@ void keyboard_handle_key(struct wl_listener *listener, void *data) {
     }
 }
 
-void server_new_keyboard(struct lk_server *server, struct wlr_input_device *device) {
+void server_new_keyboard(lk_server *server, struct wlr_input_device *device) {
     auto keyboard = (struct lk_keyboard *)calloc(1, sizeof(struct lk_keyboard));
     keyboard->server = server;
     keyboard->device = device;

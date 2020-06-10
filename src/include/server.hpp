@@ -50,7 +50,7 @@ class lk_server {
     struct wl_list outputs;
     struct wl_listener new_output;
 
-    struct lk_desktop desktop;
+    lk_desktop desktop;
 
     lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
                          double *sx, double *sy);

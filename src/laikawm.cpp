@@ -1,6 +1,3 @@
-#include "include/os.hpp"
-
-#include <string>
 #include <getopt.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -9,6 +6,10 @@
 #include <unistd.h>
 #include <wayland-server-core.h>
 #include <xkbcommon/xkbcommon.h>
+
+#include <string>
+
+#include "include/os.hpp"
 
 /* laikawm */
 #include "include/cursor.hpp"
@@ -179,15 +180,11 @@ int main(int argc, char *argv[]) {
 	 * Set up the desktop settings.
 	 */
     std::string test_bg = std::string(getenv("HOME")) + "/" + "test.jpg";
-    server.desktop = (struct lk_desktop){
+    server.desktop = (lk_desktop){
         .initialized = true,
-        .background_color = (struct lk_color){
-            .r = 0.0,
-            .g = 0.5,
-            .b = 0.7,
-            .a = 1.0},
+        .background_color = lk_color(0.0, 0.5, 0.7, 1.0),
         .background_image_mode = LK_IMG_MODE_COVER,
-        .background_image_file = test_bg.c_str()};
+        .background_image_file = test_bg};
 
     /* Set the WAYLAND_DISPLAY environment variable to our socket and run the
 	 * startup command if requested. */

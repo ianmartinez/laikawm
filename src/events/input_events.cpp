@@ -1,4 +1,4 @@
-#include "include/input.hpp"
+#include "../include/events/input_events.hpp"
 
 void server_new_input(struct wl_listener *listener, void *data) {
     /* This event is raised by the backend when a new input device becomes

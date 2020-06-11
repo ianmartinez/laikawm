@@ -20,6 +20,7 @@ project_source_files = [
     # Events
     'events/view_events.cpp',
     'events/cursor_events.cpp',
+    'events/input_events.cpp',
 
     # Theme
     'theme/color.cpp',
@@ -27,7 +28,6 @@ project_source_files = [
     'theme/theme.cpp',
     
     # Other
-    'input.cpp',
     'keyboard.cpp',
     'output.cpp',
     'render.cpp',

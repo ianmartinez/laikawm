@@ -1,10 +1,10 @@
-#ifndef LK_INPUT_H
-#define LK_INPUT_H
+#ifndef LK_INPUT_EVENTS_H
+#define LK_INPUT_EVENTS_H
 
 #include <wayland-server-core.h>
 
-#include "events/cursor_events.hpp"
-#include "keyboard.hpp"
+#include "cursor_events.hpp"
+#include "../keyboard.hpp"
 
 /**
  * Route a new input to a handler function. Right now, the only inputs

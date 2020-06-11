@@ -1,4 +1,4 @@
-#include "include/cursor.hpp"
+#include "../include/events/cursor_events.hpp"
 
 void server_cursor_motion(struct wl_listener *listener, void *data) {
     /* This event is forwarded by the cursor when a pointer emits a _relative_

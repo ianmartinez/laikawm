@@ -12,7 +12,7 @@
 #include <string>
 
 /* laikawm */
-#include "include/cursor.hpp"
+#include "include/events/cursor_events.hpp"
 #include "include/input.hpp"
 #include "include/keyboard.hpp"
 #include "include/layers.hpp"

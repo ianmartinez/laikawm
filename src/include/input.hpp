@@ -3,7 +3,7 @@
 
 #include <wayland-server-core.h>
 
-#include "cursor.hpp"
+#include "events/cursor_events.hpp"
 #include "keyboard.hpp"
 
 /**

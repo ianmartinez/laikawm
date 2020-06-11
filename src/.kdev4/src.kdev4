@@ -1,0 +1,29 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x06\x00s\x00r\x00c)
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=laikawm
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x02\x00\x00\x00\x06\x00s\x00r\x00c\x00\x00\x00\x0e\x00l\x00a\x00i\x00k\x00a\x00w\x00m)
+Dependency Action=Build
+Project Target=src,laikawm
+
+[MesonManager]
+Current Build Directory Index=0
+Number of Build Directories=1
+
+[MesonManager][BuildDir 0]
+Additional meson arguments=
+Build Directory Path=/home/ian/laikawm/src/build
+Meson Generator Backend=ninja
+Meson executable=/usr/bin/meson
+
+[Project]
+VersionControlSupport=kdevgit

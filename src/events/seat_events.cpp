@@ -1,4 +1,4 @@
-#include "include/selection.hpp"
+#include "../include/events/seat_events.hpp"
 
 void seat_request_set_selection(struct wl_listener *listener, void *data) {
     /* This event is raised by the seat when a client wants to set the selection,

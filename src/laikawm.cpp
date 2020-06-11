@@ -19,7 +19,7 @@
 #include "include/output.hpp"
 #include "include/events/output_events.hpp"
 #include "include/render.hpp"
-#include "include/selection.hpp"
+#include "include/events/seat_events.hpp"
 #include "include/server.hpp"
 #include "include/events/surface_events.hpp"
 #include "include/util.hpp"

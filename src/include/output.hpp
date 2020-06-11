@@ -13,10 +13,10 @@
 #include "wl_includes.hpp"
 
 struct lk_output {
-	struct wl_list link;
-	lk_server *server;
-	struct wlr_output *wlr_output;
-	struct wl_listener frame;
+    struct wl_list link;
+    lk_server *server;
+    struct wlr_output *wlr_output;
+    struct wl_listener frame;
 };
 
 void output_add(struct wl_listener *listener, void *data);

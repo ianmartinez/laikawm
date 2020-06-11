@@ -1,14 +1,13 @@
 #ifndef LK_OUTPUT_H
 #define LK_OUTPUT_H
 
+#include "os.hpp"
 #include <stdlib.h>
 #include <time.h>
 #include <wayland-server-core.h>
 #include <wayland-util.h>
 
-#include "background.hpp"
-#include "color.hpp"
-#include "os.hpp"
+#include "theme/color.hpp"
 #include "render.hpp"
 #include "server.hpp"
 #include "wl_includes.hpp"

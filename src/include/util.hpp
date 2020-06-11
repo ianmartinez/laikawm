@@ -9,7 +9,4 @@
  * make life easier.
  */
 
-template <typename T>
-void moveItemToBack(std::vector<T> &v, T item);
-
 #endif

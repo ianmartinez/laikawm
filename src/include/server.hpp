@@ -6,7 +6,7 @@
 
 #include <list>
 
-#include "background.hpp"
+#include "theme/desktop.hpp"
 #include "cursor_mode.hpp"
 #include "view.hpp"
 #include "wl_includes.hpp"
@@ -56,6 +56,7 @@ class lk_server {
 		lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
 						 double *sx, double *sy);
 		void launch_program(std::string program_name);
+        
 		/**
 		 * Mouse
 		 */

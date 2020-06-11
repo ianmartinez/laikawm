@@ -15,7 +15,9 @@ inc = include_directories('include')
 
 project_source_files = [
   'util.cpp',
-  'color.cpp',
+  'theme/color.cpp',
+  'theme/image.cpp',
+  'theme/theme.cpp',
   'cursor.cpp',
   'input.cpp',
   'keyboard.cpp',

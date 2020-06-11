@@ -68,3 +68,44 @@ void lk_view::focus(struct wlr_surface *surface) {
                                    keyboard->keycodes, keyboard->num_keycodes, &keyboard->modifiers);
 }
 
+void lk_view::request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges) {
+    /* This function sets up an interactive move or resize operation, where the
+     * compositor stops propegating pointer events to clients and instead
+     * consumes them itself, to move or resize windows. */
+    struct wlr_surface *focused_surface =
+            this->server->seat->pointer_state.focused_surface;
+    if (this->xdg_surface->surface != focused_surface) {
+        /* Deny move/resize requests from unfocused clients. */
+        return;
+    }
+    this->server->grabbed_view = this;
+    this->server->has_grabbed_view = true;
+    this->server->cursor_mode = mode;
+
+    if (mode == LK_CURSOR_MOVE) {
+        this->move_with_cursor();
+    } else {
+        this->resize_with_cursor(edges);
+    }
+}
+
+void lk_view::move_with_cursor() {
+    this->server->grab_x = server->cursor->x - this->x;
+    this->server->grab_y = server->cursor->y - this->y;
+}
+
+void lk_view::resize_with_cursor(uint32_t edges) {
+    struct wlr_box geo_box;
+    wlr_xdg_surface_get_geometry(this->xdg_surface, &geo_box);
+
+    double border_x = (this->x + geo_box.x) + ((edges & WLR_EDGE_RIGHT) ? geo_box.width : 0);
+    double border_y = (this->y + geo_box.y) + ((edges & WLR_EDGE_BOTTOM) ? geo_box.height : 0);
+    server->grab_x = server->cursor->x - border_x;
+    server->grab_y = server->cursor->y - border_y;
+
+    server->grab_geobox = geo_box;
+    server->grab_geobox.x += this->x;
+    server->grab_geobox.y += this->y;
+
+    server->resize_edges = edges;
+}

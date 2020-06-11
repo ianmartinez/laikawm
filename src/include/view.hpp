@@ -25,6 +25,10 @@ class lk_view {
                        double *sx, double *sy);
 
         void focus(struct wlr_surface *surface);
+
+        void request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges);
+        void move_with_cursor();
+        void resize_with_cursor(uint32_t edges);
 };
 
 #endif

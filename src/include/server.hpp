@@ -10,6 +10,7 @@
 #include "cursor_mode.hpp"
 #include "view.hpp"
 #include "wl_includes.hpp"
+#include "events/keyboard_events.hpp"
 
 class lk_view;
 

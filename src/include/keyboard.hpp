@@ -8,6 +8,8 @@
 #include "server.hpp"
 #include "wl_includes.hpp"
 
+class lk_server;
+
 struct lk_keyboard {
     struct wl_list link;
     lk_server *server;
@@ -16,8 +18,5 @@ struct lk_keyboard {
     struct wl_listener modifiers;
     struct wl_listener key;
 };
-
-void keyboard_handle_modifiers(struct wl_listener *listener, void *data);
-void keyboard_handle_key(struct wl_listener *listener, void *data);
 
 #endif

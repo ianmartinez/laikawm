@@ -18,9 +18,10 @@ project_source_files = [
     'util.cpp',
 
     # Events
-    'events/view_events.cpp',
     'events/cursor_events.cpp',
     'events/input_events.cpp',
+    'events/keyboard_events.cpp',
+    'events/view_events.cpp',
 
     # Theme
     'theme/color.cpp',

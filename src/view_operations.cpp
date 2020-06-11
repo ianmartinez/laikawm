@@ -63,3 +63,4 @@ void view_resize(lk_server *server, lk_view *view, uint32_t edges) {
 
     server->resize_edges = edges;
 }
+

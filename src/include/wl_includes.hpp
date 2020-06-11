@@ -2,7 +2,7 @@
 #define WL_INCLUDES_H
 
 /**
- * Wrap the wlroots includes in a 
+ * Wrap the wlroots includes in a
  * C++ compatible header file.
  */
 

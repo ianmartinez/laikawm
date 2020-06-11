@@ -10,6 +10,6 @@
  */
 
 template <typename T>
-void moveItemToBack(std::vector<T>& v, T item);
+void moveItemToBack(std::vector<T> &v, T item);
 
 #endif

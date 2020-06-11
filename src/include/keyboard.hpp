@@ -9,12 +9,12 @@
 #include "wl_includes.hpp"
 
 struct lk_keyboard {
-    struct wl_list link;
-    lk_server *server;
-    struct wlr_input_device *device;
+	struct wl_list link;
+	lk_server *server;
+	struct wlr_input_device *device;
 
-    struct wl_listener modifiers;
-    struct wl_listener key;
+	struct wl_listener modifiers;
+	struct wl_listener key;
 };
 
 void keyboard_handle_modifiers(struct wl_listener *listener, void *data);

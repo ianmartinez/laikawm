@@ -23,7 +23,7 @@
 #include "include/surface.hpp"
 #include "include/util.hpp"
 #include "include/view.hpp"
-#include "include/view_operations.hpp"
+#include "include/events/view_events.hpp"
 #include "include/window_decoration.hpp"
 #include "wl_includes.hpp"
 

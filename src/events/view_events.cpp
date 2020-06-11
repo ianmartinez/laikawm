@@ -1,4 +1,4 @@
-#include "include/view_operations.hpp"
+#include "../include/events/view_events.hpp"
 
 void view_request_move(struct wl_listener *listener, void *data) {
     /* This event is raised when a client would like to begin an interactive

@@ -14,44 +14,51 @@ subdir('protocol')
 inc = include_directories('include')
 
 project_source_files = [
-  'util.cpp',
-  'theme/color.cpp',
-  'theme/image.cpp',
-  'theme/theme.cpp',
-  'cursor.cpp',
-  'input.cpp',
-  'keyboard.cpp',
-  'output.cpp',
-  'render.cpp',
-  'layers.cpp',
-  'selection.cpp',
-  'server.cpp',
-  'surface.cpp',
-  'view.cpp',
-  'view_operations.cpp',
-  'window_decoration.cpp',
-  'laikawm.cpp'
+    # Util
+    'util.cpp',
+
+    # Events
+    'events/view_events.cpp',
+
+    # Theme
+    'theme/color.cpp',
+    'theme/image.cpp',
+    'theme/theme.cpp',
+    
+    # Other
+    'cursor.cpp',
+    'input.cpp',
+    'keyboard.cpp',
+    'output.cpp',
+    'render.cpp',
+    'layers.cpp',
+    'selection.cpp',
+    'server.cpp',
+    'surface.cpp',
+    'view.cpp',
+    'window_decoration.cpp',
+    'laikawm.cpp'
 ]
 
 project_dependencies = [
-  dependency('wlroots'),
-  dependency('wayland-client'),
-  dependency('wayland-server'),
-  dependency('xkbcommon'),
-  dependency('gdk-pixbuf-2.0'),
-  dependency('cairo'),
-  dependency('pango'),
-  dependency('pangocairo'),
-  dependency('librsvg-2.0'),
-  dependency('expat'),
-  client_protos
+    dependency('wlroots'),
+    dependency('wayland-client'),
+    dependency('wayland-server'),
+    dependency('xkbcommon'),
+    dependency('gdk-pixbuf-2.0'),
+    dependency('cairo'),
+    dependency('pango'),
+    dependency('pangocairo'),
+    dependency('librsvg-2.0'),
+    dependency('expat'),
+    client_protos
 ]
 
 project_target = executable(
-  meson.project_name(),
-  project_source_files,
-  dependencies: project_dependencies,
-  include_directories: inc,  
-  c_args: build_args,
-  cpp_args: build_args
+    meson.project_name(),
+    project_source_files,
+    dependencies: project_dependencies,
+    include_directories: inc,  
+    c_args: build_args,
+    cpp_args: build_args
 )

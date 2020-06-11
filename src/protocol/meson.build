@@ -2,7 +2,7 @@
 # protocols, which are specified in XML. wlroots requires you to rig these up
 # to your build system yourself and provide them in the include path.
 
-# find wayland_scanner to generate C code from
+# Find wayland_scanner to generate C code from
 wayland_protos = dependency('wayland-protocols')
 wl_protocol_dir = wayland_protos.get_pkgconfig_variable('pkgdatadir')
 wayland_scanner_dep = dependency('wayland-scanner', required: false, native: true)
@@ -15,14 +15,14 @@ else
 	wayland_scanner = find_program('wayland-scanner', native: true)
 endif
 
-# protocols that need to be generated
+# Protocols that need to be generated
 protocols = [
 	[wl_protocol_dir, 'stable/xdg-shell/xdg-shell.xml'],
 	[wl_protocol_dir, 'unstable/xdg-decoration/xdg-decoration-unstable-v1.xml'],
 	['', 'wlr-layer-shell-unstable-v1.xml']
 ]
 
-# generate *.h and *.c files for protocols
+# Generate *.h and *.c files for protocols
 wl_protos_src = []
 wl_protos_headers = []
 foreach p : protocols
@@ -44,9 +44,9 @@ endforeach
 lib_protocols = static_library(
 	'client_protos',
 	wl_protos_src + wl_protos_headers
-) # for the include directory
+) # For the include directory
 
 client_protos = declare_dependency(
 	link_with: lib_protocols,
 	sources: wl_protos_headers,
-)
+) # For the source directory

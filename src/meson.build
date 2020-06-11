@@ -5,14 +5,19 @@ project(
     default_options: ['c_std=c11', 'cpp_std=c++17']
 )
 
+# Arguments for the compiler
 build_args = [
     '-DWLR_USE_UNSTABLE',
     '-g'
 ]
 
+# Include protocols directory
 subdir('protocol')
+
+# Add header files
 inc = include_directories('include')
 
+# Add implementation files
 project_source_files = [
     # Util
     'util.cpp',
@@ -42,6 +47,7 @@ project_source_files = [
     'laikawm.cpp'
 ]
 
+# Project dependencies
 project_dependencies = [
     dependency('wlroots'),
     dependency('wayland-client'),
@@ -52,10 +58,10 @@ project_dependencies = [
     dependency('pango'),
     dependency('pangocairo'),
     dependency('librsvg-2.0'),
-    dependency('expat'),
     client_protos
 ]
 
+# Set the project target
 project_target = executable(
     meson.project_name(),
     project_source_files,

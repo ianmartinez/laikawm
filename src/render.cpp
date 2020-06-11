@@ -58,4 +58,3 @@ void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
      * prepare another one now if it likes. */
     wlr_surface_send_frame_done(surface, rdata->when);
 }
-

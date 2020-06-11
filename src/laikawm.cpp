@@ -208,6 +208,6 @@ int main(int argc, char *argv[]) {
     /* Once wl_display_run returns, we shut down the server. */
     wl_display_destroy_clients(server.wl_display);
     wl_display_destroy(server.wl_display);
+
     return 0;
 }
-

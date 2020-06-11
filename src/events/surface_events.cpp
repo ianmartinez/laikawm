@@ -1,4 +1,4 @@
-#include "include/surface.hpp"
+#include "../include/events/surface_events.hpp"
 
 void surface_map(struct wl_listener *listener, void *data) {
     /* Called when the surface is mapped, or ready to display on-screen. */

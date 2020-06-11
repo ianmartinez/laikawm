@@ -9,4 +9,5 @@
 
 void view_request_move(struct wl_listener *listener, void *data);
 void view_request_resize(struct wl_listener *listener, void *data);
+
 #endif

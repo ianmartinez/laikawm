@@ -1,11 +1,11 @@
-#ifndef LK_SURFACE_H
-#define LK_SURFACE_H
+#ifndef LK_SURFACE_EVENTS_H
+#define LK_SURFACE_EVENTS_H
 
 #include <stdlib.h>
 #include <wayland-server-core.h>
 
-#include "server.hpp"
-#include "events/view_events.hpp"
+#include "../server.hpp"
+#include "view_events.hpp"
 
 void surface_map(struct wl_listener *listener, void *data);
 void surface_unmap(struct wl_listener *listener, void *data);

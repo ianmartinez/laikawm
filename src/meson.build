@@ -21,8 +21,10 @@ project_source_files = [
     'events/cursor_events.cpp',
     'events/input_events.cpp',
     'events/keyboard_events.cpp',
-    'events/view_events.cpp',
     'events/layer_events.cpp',
+    'events/output_events.cpp',
+    'events/surface_events.cpp',
+    'events/view_events.cpp',
 
     # Theme
     'theme/color.cpp',
@@ -35,7 +37,6 @@ project_source_files = [
     'render.cpp',
     'selection.cpp',
     'server.cpp',
-    'surface.cpp',
     'view.cpp',
     'window_decoration.cpp',
     'laikawm.cpp'

@@ -1,3 +1,5 @@
+#include "include/os.hpp"
+
 #include <getopt.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -8,8 +10,6 @@
 #include <xkbcommon/xkbcommon.h>
 
 #include <string>
-
-#include "include/os.hpp"
 
 /* laikawm */
 #include "include/cursor.hpp"

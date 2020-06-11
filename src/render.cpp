@@ -21,17 +21,16 @@ void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
 	 * have layout coordinates of 2000,100. We need to translate that to
 	 * output-local coordinates, or (2000 - 1920). */
 	double ox = 0, oy = 0;
-	wlr_output_layout_output_coords(
-		view->server->output_layout, output, &ox, &oy);
+	wlr_output_layout_output_coords(view->server->output_layout, output, &ox, &oy);
 	ox += view->x + sx, oy += view->y + sy;
 
 	/* We also have to apply the scale factor for HiDPI outputs. This is only
 	 * part of the puzzle, TinyWL does not fully support HiDPI. */
 	struct wlr_box box = {
-		.x = ox * output->scale,
-		.y = oy * output->scale,
-		.width = surface->current.width * output->scale,
-		.height = surface->current.height * output->scale,
+		.x = static_cast<int>(ox * output->scale),
+		.y = static_cast<int>(oy * output->scale),
+		.width = static_cast<int>(surface->current.width * output->scale),
+		.height = static_cast<int>(surface->current.height * output->scale)
 	};
 
 	/*

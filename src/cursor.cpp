@@ -75,8 +75,8 @@ void server_cursor_frame(struct wl_listener *listener, void *data) {
 }
 
 void seat_request_cursor(struct wl_listener *listener, void *data) {
-	lk_server *server = wl_container_of(
-							listener, server, request_cursor);
+	lk_server *server =
+		wl_container_of(listener, server, request_cursor);
 	/* This event is rasied by the seat when a client provides a cursor image */
 	auto event = (struct wlr_seat_pointer_request_set_cursor_event *)data;
 	struct wlr_seat_client *focused_client =

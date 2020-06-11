@@ -62,7 +62,7 @@ void output_frame(struct wl_listener *listener, void *data) {
 	wlr_renderer_begin(renderer, width, height);
 
 	// Draw the desktop background color
-	struct lk_desktop desktop = output->server->desktop;
+	lk_desktop desktop = output->server->desktop;
 	if (desktop.initialized) {
 		float bg_color_array[4];
 		desktop.background_color.to_array(bg_color_array);

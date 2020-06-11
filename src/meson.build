@@ -22,6 +22,7 @@ project_source_files = [
     'events/input_events.cpp',
     'events/keyboard_events.cpp',
     'events/view_events.cpp',
+    'events/layer_events.cpp',
 
     # Theme
     'theme/color.cpp',
@@ -32,7 +33,6 @@ project_source_files = [
     'keyboard.cpp',
     'output.cpp',
     'render.cpp',
-    'layers.cpp',
     'selection.cpp',
     'server.cpp',
     'surface.cpp',

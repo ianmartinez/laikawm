@@ -10,7 +10,6 @@ class lk_server;
 
 class lk_view {
     public:
-        struct wl_list link;
         lk_server *server;
         struct wlr_xdg_surface *xdg_surface;
         struct wl_listener map;
@@ -32,3 +31,4 @@ class lk_view {
 };
 
 #endif
+

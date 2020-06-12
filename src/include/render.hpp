@@ -7,7 +7,7 @@
 #include <wayland-util.h>
 
 #include "os.hpp"
-#include "output.hpp"
+#include "devices/output.hpp"
 #include "server.hpp"
 #include "wl_includes.hpp"
 

@@ -12,7 +12,6 @@ class lk_server;
 
 class lk_keyboard {
     public:
-        struct wl_list link;
         lk_server *server;
         struct wlr_input_device *device;
 
@@ -21,3 +20,4 @@ class lk_keyboard {
 };
 
 #endif
+

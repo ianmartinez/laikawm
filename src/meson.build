@@ -37,9 +37,11 @@ project_source_files = [
     'theme/image.cpp',
     'theme/theme.cpp',
     
+    # Devices
+    'devices/keyboard.cpp',
+    'devices/output.cpp',    
+    
     # Other
-    'keyboard.cpp',
-    'output.cpp',
     'render.cpp',
     'server.cpp',
     'view.cpp',

@@ -1,5 +1,5 @@
 #include "include/server.hpp"
-#include "include/keyboard.hpp"
+#include "include/devices/keyboard.hpp"
 
 lk_view *lk_server::view_at(double lx, double ly, struct wlr_surface **surface,
                             double *sx, double *sy) {
@@ -156,7 +156,7 @@ void lk_server::keyboard_added(struct wlr_input_device *device) {
     wlr_seat_set_keyboard(this->seat, device);
 
     /* And add the keyboard to our list of keyboards */
-    wl_list_insert(&this->keyboards, &keyboard->link);
+    this->keyboards.push_back(keyboard);
 }
 
 void lk_server::launch_program(std::string program_name) {

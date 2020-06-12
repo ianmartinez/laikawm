@@ -14,9 +14,9 @@
 /* laikawm */
 #include "include/events/cursor_events.hpp"
 #include "include/events/input_events.hpp"
-#include "include/keyboard.hpp"
+#include "include/devices/keyboard.hpp"
 #include "include/events/layer_events.hpp"
-#include "include/output.hpp"
+#include "include/devices/output.hpp"
 #include "include/events/output_events.hpp"
 #include "include/render.hpp"
 #include "include/events/seat_events.hpp"
@@ -151,7 +151,6 @@ int main(int argc, char *argv[]) {
      * pointer, touch, and drawing tablet device. We also rig up a listener to
      * let us know when new input devices are available on the backend.
      */
-    wl_list_init(&server.keyboards);
     server.new_input.notify = server_new_input;
     wl_signal_add(&server.backend->events.new_input, &server.new_input);
     server.seat = wlr_seat_create(server.wl_display, "seat0");

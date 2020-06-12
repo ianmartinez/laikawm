@@ -4,7 +4,7 @@
 #include <wayland-server-core.h>
 
 #include "cursor_events.hpp"
-#include "../keyboard.hpp"
+#include "../devices/keyboard.hpp"
 
 /**
  * Route a new input to a handler function. Right now, the only inputs

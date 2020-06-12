@@ -21,7 +21,7 @@ void server_new_input(struct wl_listener *listener, void *data) {
      * there are no pointer devices, so we always include that capability. */
     uint32_t caps = WL_SEAT_CAPABILITY_POINTER;
 
-    if (!wl_list_empty(&server->keyboards)) {
+    if (!server->keyboards.empty()) {
         caps |= WL_SEAT_CAPABILITY_KEYBOARD;
     }
 

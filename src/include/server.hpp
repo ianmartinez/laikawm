@@ -11,8 +11,10 @@
 #include "view.hpp"
 #include "wl_includes.hpp"
 #include "events/keyboard_events.hpp"
+#include "devices/keyboard.hpp"
 
 class lk_view;
+class lk_keyboard;
 
 class lk_server {
     public:
@@ -40,7 +42,8 @@ class lk_server {
         struct wl_listener new_input;
         struct wl_listener request_cursor;
         struct wl_listener request_set_selection;
-        struct wl_list keyboards;
+        std::list<lk_keyboard *> keyboards;
+        
         enum lk_cursor_mode cursor_mode;
         bool has_grabbed_view;
         lk_view *grabbed_view;

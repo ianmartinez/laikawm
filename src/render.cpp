@@ -2,7 +2,7 @@
 
 void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
     /* This function is called for every surface that needs to be rendered. */
-    auto rdata = (struct lk_render_data *)data;
+    auto rdata = (lk_render_data *)data;
     lk_view *view = rdata->view;
     struct wlr_output *output = rdata->output;
 

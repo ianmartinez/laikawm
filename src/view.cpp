@@ -78,6 +78,7 @@ void lk_view::request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges)
         /* Deny move/resize requests from unfocused clients. */
         return;
     }
+    
     this->server->grabbed_view = this;
     this->server->has_grabbed_view = true;
     this->server->cursor_mode = mode;

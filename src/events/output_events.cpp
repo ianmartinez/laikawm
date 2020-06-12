@@ -79,16 +79,18 @@ void output_frame(struct wl_listener *listener, void *data) {
             /* An unmapped view should not be rendered. */
             continue;
         }
-        struct lk_render_data rdata = {
+
+        lk_render_data render_data = {
             .output = output->wlr_output,
             .renderer = renderer,
             .view = view,
-            .when = &now,
+            .when = &now
         };
+        
         /* This calls our render_surface function for each surface among the
          * xdg_surface's toplevel and popups. */
         wlr_xdg_surface_for_each_surface(view->xdg_surface,
-                                         render_surface, &rdata);
+                                         render_surface, &render_data);
     }
 
     /* Hardware cursors are rendered by the GPU on a separate plane, and can be

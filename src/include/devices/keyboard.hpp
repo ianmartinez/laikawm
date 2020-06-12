@@ -5,8 +5,8 @@
 #include <wayland-server-core.h>
 #include <wayland-util.h>
 
-#include "server.hpp"
-#include "wl_includes.hpp"
+#include "../server.hpp"
+#include "../wl_includes.hpp"
 
 class lk_server;
 

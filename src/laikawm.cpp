@@ -26,7 +26,7 @@
 #include "include/view.hpp"
 #include "include/events/view_events.hpp"
 #include "include/window_decoration.hpp"
-#include "wl_includes.hpp"
+#include "include/wl_includes.hpp"
 
 int main(int argc, char *argv[]) {
     wlr_log_init(WLR_DEBUG, NULL);

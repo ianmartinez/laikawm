@@ -1,0 +1,21 @@
+=== Workspaces ===
+LOGO + {NUMBER}
+	Go to workspace
+SHIFT + LOGO + {NUMBER}
+	Shift application to workspace
+	
+=== Application ====
+LOGO + M
+	Maximize 
+LOGO + N
+	Minimize
+LOGO + J
+	Restore
+LOGO + Q
+	Quit
+LOGO + W
+	Close window
+	
+=== Launch ===
+LOGO + D
+	Launch Application

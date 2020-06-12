@@ -10,13 +10,14 @@
 
 class lk_server;
 
-struct lk_keyboard {
-    struct wl_list link;
-    lk_server *server;
-    struct wlr_input_device *device;
+class lk_keyboard {
+    public:
+        struct wl_list link;
+        lk_server *server;
+        struct wlr_input_device *device;
 
-    struct wl_listener modifiers;
-    struct wl_listener key;
+        struct wl_listener modifiers;
+        struct wl_listener key;
 };
 
 #endif

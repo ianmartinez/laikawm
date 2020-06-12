@@ -132,7 +132,7 @@ void lk_server::process_cursor_motion(uint32_t time) {
 }
 
 void lk_server::keyboard_added(struct wlr_input_device *device) {
-    auto keyboard = (struct lk_keyboard *)calloc(1, sizeof(struct lk_keyboard));
+    lk_keyboard *keyboard = new lk_keyboard();
     keyboard->server = this;
     keyboard->device = device;
 

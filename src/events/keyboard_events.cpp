@@ -3,8 +3,7 @@
 void keyboard_handle_modifiers(struct wl_listener *listener, void *data) {
     /* This event is raised when a modifier key, such as shift or alt, is
      * pressed. We simply communicate this to the client. */
-    struct lk_keyboard *keyboard =
-        wl_container_of(listener, keyboard, modifiers);
+    lk_keyboard *keyboard = wl_container_of(listener, keyboard, modifiers);
     /*
      * A seat can only have one keyboard, but this is a limitation of the
      * Wayland protocol - not wlroots. We assign all connected keyboards to the
@@ -19,8 +18,7 @@ void keyboard_handle_modifiers(struct wl_listener *listener, void *data) {
 
 void keyboard_handle_key(struct wl_listener *listener, void *data) {
     /* This event is raised when a key is pressed or released. */
-    struct lk_keyboard *keyboard =
-        wl_container_of(listener, keyboard, key);
+    lk_keyboard *keyboard = wl_container_of(listener, keyboard, key);
     lk_server *server = keyboard->server;
     auto event = (struct wlr_event_keyboard_key *)data;
     struct wlr_seat *seat = server->seat;

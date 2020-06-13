@@ -2,9 +2,9 @@
 
 void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
     /* This function is called for every surface that needs to be rendered. */
-    auto rdata = (lk_render_data *)data;
-    lk_view *view = rdata->view;
-    struct wlr_output *output = rdata->output;
+    auto render_data = (lk_render_data *)data;
+    lk_view *view = render_data->view;
+    struct wlr_output *output = render_data->output;
 
     /* We first obtain a wlr_texture, which is a GPU resource. wlroots
      * automatically handles negotiating these with the client. The underlying
@@ -52,9 +52,18 @@ void render_surface(struct wlr_surface *surface, int sx, int sy, void *data) {
 
     /* This takes our matrix, the texture, and an alpha, and performs the actual
      * rendering on the GPU. */
-    wlr_render_texture_with_matrix(rdata->renderer, texture, matrix, 1);
+    wlr_render_texture_with_matrix(render_data->renderer, texture, matrix, 1);
 
     /* This lets the client know that we've displayed that frame and it can
      * prepare another one now if it likes. */
-    wlr_surface_send_frame_done(surface, rdata->when);
+    wlr_surface_send_frame_done(surface, render_data->when);
 }
+
+
+
+
+
+
+
+
+

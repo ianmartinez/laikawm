@@ -29,7 +29,7 @@ extern "C" {
 #include <wlr/types/wlr_xcursor_manager.h>
 #include <wlr/types/wlr_xdg_shell.h>
 #include <wlr/util/log.h>
-
+    
 #include "wlr-layer-shell-unstable-v1-protocol.h"
 #include "xdg-decoration-unstable-v1-protocol.h"
 }
@@ -39,3 +39,4 @@ extern "C" {
 #undef namespace
 
 #endif
+

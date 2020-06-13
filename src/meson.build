@@ -31,6 +31,7 @@ project_source_files = [
     'events/seat_events.cpp',
     'events/surface_events.cpp',
     'events/view_events.cpp',
+    'events/xwayland_events.cpp',
 
     # Theme
     'theme/color.cpp',

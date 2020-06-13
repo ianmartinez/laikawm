@@ -78,7 +78,7 @@ void lk_view::request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges)
         /* Deny move/resize requests from unfocused clients. */
         return;
     }
-    
+
     this->server->grabbed_view = this;
     this->server->has_grabbed_view = true;
     this->server->cursor_mode = mode;
@@ -109,4 +109,21 @@ void lk_view::resize_with_cursor(uint32_t edges) {
     server->grab_geobox.y += this->y;
 
     server->resize_edges = edges;
+}
+
+lk_view_constraints lk_view::get_constraints() {
+    double min_width, min_height, max_width, max_height;
+
+    auto state = this->xdg_surface->toplevel->current;
+    min_width = (state.min_width > 0) ? state.min_width : DBL_MIN;
+    max_width = (state.max_width > 0) ? state.max_width : DBL_MAX;
+    min_height = (state.min_height > 0) ? state.min_height : DBL_MIN;
+    max_height = (state.max_height > 0) ? state.max_height : DBL_MAX;
+
+    return lk_view_constraints {
+        .min_width = min_width,
+        .min_height = min_height,
+        .max_width = max_width,
+        .max_height = max_height
+    };
 }

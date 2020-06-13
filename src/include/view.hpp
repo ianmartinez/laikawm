@@ -5,13 +5,24 @@
 
 #include "server.hpp"
 #include "wl_includes.hpp"
+#include "widgets/sizing.hpp"
 
 class lk_server;
 
+enum lk_view_type {
+    LK_XDG_VIEW,
+    LK_XWAYLAND_VIEW,
+    LK_LAYER_VIEW
+};
+
 class lk_view {
-    public:
+    public:        
+        virtual ~lk_view() {};
+        
         lk_server *server;
+        lk_view_type view_type;
         struct wlr_xdg_surface *xdg_surface;
+		struct wlr_xwayland_surface *wlr_xwayland_surface;
         struct wl_listener map;
         struct wl_listener unmap;
         struct wl_listener destroy;
@@ -28,6 +39,7 @@ class lk_view {
         void request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges);
         void move_with_cursor();
         void resize_with_cursor(uint32_t edges);
+        virtual lk_view_constraints get_constraints();
 };
 
 #endif

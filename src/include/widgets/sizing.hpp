@@ -27,5 +27,12 @@ struct lk_sides {
     uint16_t right;
 };
 
+struct lk_view_constraints {
+    double min_width;
+    double min_height;
+    double max_width;
+    double max_height;
+};
+
 #endif
 

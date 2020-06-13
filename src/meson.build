@@ -46,6 +46,7 @@ project_source_files = [
     'render.cpp',
     'server.cpp',
     'view.cpp',
+    'xwayland/xwayland_view.cpp',
     'window_decoration.cpp',
     'laikawm.cpp'
 ]

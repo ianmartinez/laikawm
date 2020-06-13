@@ -64,7 +64,6 @@ class lk_server {
         struct wl_listener xwayland_new_surface;
         struct wl_listener xwayland_ready;
 
-
         lk_desktop desktop;
 
         lk_view *view_at(double lx, double ly, struct wlr_surface **surface,

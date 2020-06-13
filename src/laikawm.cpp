@@ -200,16 +200,21 @@ int main(int argc, char *argv[]) {
      * Initialize xwayland lazily (i.e. only load it when the first X11-only client
      * tries to connect rather than loading at startup)
      *
-     * TODO: Add config to change this behavior
+     * TODO: CONFIG: Allow changing this behavior to load at startup
      */
     server.xwayland.wlr_xwayland =
         wlr_xwayland_create(server.wl_display, server.compositor, true);
     if (!server.xwayland.wlr_xwayland) {
         wlr_log(WLR_ERROR, "Failed to start Xwayland");
     } else {
+        // Event that fires once Xwayland has loaded
         wl_signal_add(&server.xwayland.wlr_xwayland->events.ready,
                       &server.xwayland_ready);
         server.xwayland_ready.notify = xwayland_ready;
+
+        wl_signal_add(&server.xwayland.wlr_xwayland->events.new_surface,
+                      &server.xwayland_new_surface);
+        server.xwayland_new_surface.notify = xwayland_new_surface;
 
         // Set the X11 $DISPLAY variable to match this server's X11 session
         setenv("DISPLAY", server.xwayland.wlr_xwayland->display_name, true);

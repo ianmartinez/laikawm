@@ -15,6 +15,7 @@
 
 class lk_view;
 class lk_keyboard;
+class lk_output;
 
 class lk_server {
     public:
@@ -52,7 +53,7 @@ class lk_server {
         uint32_t resize_edges;
 
         struct wlr_output_layout *output_layout;
-        struct wl_list outputs;
+        std::list<lk_output *> outputs;
         struct wl_listener new_output;
 
         lk_desktop desktop;

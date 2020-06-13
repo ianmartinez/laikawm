@@ -12,11 +12,11 @@
 #include "../server.hpp"
 #include "../wl_includes.hpp"
 
-struct lk_output {
-    struct wl_list link;
-    lk_server *server;
-    struct wlr_output *wlr_output;
-    struct wl_listener frame;
+class lk_output {
+    public:
+        lk_server *server;
+        struct wlr_output *wlr_output;
+        struct wl_listener frame;
 };
 
 #endif

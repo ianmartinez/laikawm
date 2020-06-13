@@ -22,13 +22,13 @@ void output_add(struct wl_listener *listener, void *data) {
     }
 
     /* Allocates and configures our state for this output */
-    auto output = (struct lk_output *)calloc(1, sizeof(struct lk_output));
+    lk_output *output = new lk_output();
     output->wlr_output = wlr_output;
     output->server = server;
     /* Sets up a listener for the frame notify event. */
     output->frame.notify = output_frame;
     wl_signal_add(&wlr_output->events.frame, &output->frame);
-    wl_list_insert(&server->outputs, &output->link);
+    server->outputs.push_back(output);
 
     /* Adds this to the output layout. The add_auto function arranges outputs
      * from left-to-right in the order they appear. A more sophisticated
@@ -45,7 +45,7 @@ void output_add(struct wl_listener *listener, void *data) {
 void output_frame(struct wl_listener *listener, void *data) {
     /* This function is called every time an output is ready to display a frame,
      * generally at the output's refresh rate (e.g. 60Hz). */
-    struct lk_output *output = wl_container_of(listener, output, frame);
+    lk_output *output = wl_container_of(listener, output, frame);
     struct wlr_renderer *renderer = output->server->renderer;
 
     struct timespec now;
@@ -86,7 +86,7 @@ void output_frame(struct wl_listener *listener, void *data) {
             .view = view,
             .when = &now
         };
-        
+
         /* This calls our render_surface function for each surface among the
          * xdg_surface's toplevel and popups. */
         wlr_xdg_surface_for_each_surface(view->xdg_surface,

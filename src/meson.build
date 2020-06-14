@@ -57,6 +57,7 @@ project_dependencies = [
     dependency('wayland-client'),
     dependency('wayland-server'),
     dependency('xkbcommon'),
+    dependency('xcb'),
     dependency('gdk-pixbuf-2.0'),
     dependency('cairo'),
     dependency('pango'),

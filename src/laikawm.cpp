@@ -214,7 +214,7 @@ int main(int argc, char *argv[]) {
 
         wl_signal_add(&server.xwayland.wlr_xwayland->events.new_surface,
                       &server.xwayland_new_surface);
-        server.xwayland_new_surface.notify = xwayland_new_surface;
+        server.xwayland_new_surface.notify = xwayland_surface_added;
 
         // Set the X11 $DISPLAY variable to match this server's X11 session
         setenv("DISPLAY", server.xwayland.wlr_xwayland->display_name, true);

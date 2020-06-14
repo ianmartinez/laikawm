@@ -184,6 +184,9 @@ bool lk_server::handle_keybinding(uint32_t modifiers, xkb_keysym_t sym) {
         case XKB_KEY_c:  // As is gnome-terminal
             launch_program("gnome-terminal");
             break;
+        case XKB_KEY_b:  // Lazarus requires xwayland and it uses a bunch of windows, so it's good for testing
+            launch_program("lazarus-ide");
+            break;
         default:
             return false;
     }

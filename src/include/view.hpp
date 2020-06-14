@@ -23,11 +23,16 @@ class lk_view {
         lk_view_type view_type;
         struct wlr_xdg_surface *xdg_surface;
 		struct wlr_xwayland_surface *wlr_xwayland_surface;
+        
+        /**
+         * Events
+         */
         struct wl_listener map;
         struct wl_listener unmap;
         struct wl_listener destroy;
         struct wl_listener request_move;
         struct wl_listener request_resize;
+        
         bool mapped;
         int x, y;
 

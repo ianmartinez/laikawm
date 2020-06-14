@@ -21,7 +21,6 @@
 #include "include/render.hpp"
 #include "include/events/seat_events.hpp"
 #include "include/server.hpp"
-#include "include/events/surface_events.hpp"
 #include "include/util.hpp"
 #include "include/view.hpp"
 #include "include/events/view_events.hpp"
@@ -101,7 +100,7 @@ int main(int argc, char *argv[]) {
      * https://drewdevault.com/2018/07/29/Wayland-shells.html
      */
     server.xdg_shell = wlr_xdg_shell_create(server.wl_display);
-    server.new_xdg_surface.notify = surface_recieved;
+    server.new_xdg_surface.notify = view_surface_recieved;
     wl_signal_add(&server.xdg_shell->events.new_surface,
                   &server.new_xdg_surface);
 

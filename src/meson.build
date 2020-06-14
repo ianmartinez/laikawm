@@ -30,7 +30,6 @@ project_source_files = [
     'events/output_events.cpp',
     'events/seat_events.cpp',
     'events/view_events.cpp',
-    'events/xwayland_events.cpp',
 
     # Theme
     'theme/color.cpp',
@@ -45,7 +44,6 @@ project_source_files = [
     'render.cpp',
     'server.cpp',
     'view.cpp',
-    'xwayland/xwayland_view.cpp',
     'window_decoration.cpp',
     'laikawm.cpp'
 ]

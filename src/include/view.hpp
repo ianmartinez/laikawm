@@ -16,14 +16,13 @@ enum lk_view_type {
 };
 
 class lk_view {
-    public:        
-        virtual ~lk_view() {};
-        
+    public:
+        virtual ~lk_view();
+
         lk_server *server;
         lk_view_type view_type;
         struct wlr_xdg_surface *xdg_surface;
-		struct wlr_xwayland_surface *wlr_xwayland_surface;
-        
+
         /**
          * Events
          */
@@ -32,7 +31,7 @@ class lk_view {
         struct wl_listener destroy;
         struct wl_listener request_move;
         struct wl_listener request_resize;
-        
+
         bool mapped;
         int x, y;
 
@@ -44,6 +43,9 @@ class lk_view {
         void request_cursor_operation(enum lk_cursor_mode mode, uint32_t edges);
         void move_with_cursor();
         void resize_with_cursor(uint32_t edges);
+        void map_surface(struct wlr_surface *wlr_surface,
+                        bool fullscreen, struct wlr_output *fullscreen_output,
+                        bool decoration);
         virtual lk_view_constraints get_constraints();
 };
 

@@ -12,7 +12,6 @@
 #include "wl_includes.hpp"
 #include "events/keyboard_events.hpp"
 #include "devices/keyboard.hpp"
-#include "xwayland/xwayland.hpp"
 
 class lk_view;
 class lk_keyboard;
@@ -56,13 +55,6 @@ class lk_server {
         struct wlr_output_layout *output_layout;
         std::list<lk_output *> outputs;
         struct wl_listener new_output;
-
-        /**
-         * Xwayland
-         */
-        lk_xwayland xwayland;
-        struct wl_listener xwayland_new_surface;
-        struct wl_listener xwayland_ready;
 
         lk_desktop desktop;
 

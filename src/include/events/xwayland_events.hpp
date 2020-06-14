@@ -23,4 +23,12 @@ void xwayland_surface_set_decorations(struct wl_listener *listener, void *data);
 void xwayland_view_unmap(struct wl_listener *listener, void *data);
 void xwayland_view_map(struct wl_listener *listener, void *data);
 
+// Unmanaged xwayland view
+
+void unmanaged_view_request_configure(struct wl_listener *listener, void *data);
+void unmanaged_view_map(struct wl_listener *listener, void *data);
+void unmanaged_view_unmap(struct wl_listener *listener, void *data);
+void unmanaged_view_destroy(struct wl_listener *listener, void *data);
+void unmanaged_view_commit(struct wl_listener *listener, void *data);
+
 #endif

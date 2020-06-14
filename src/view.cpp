@@ -1,6 +1,15 @@
 #include "include/view.hpp"
 
 #include <list>
+#include <algorithm>
+
+lk_view::~lk_view() {
+    bool view_on_server =
+        std::find(server->views.begin(), server->views.end(), this) != server->views.end();
+    if (view_on_server) {
+        server->views.remove(this);
+    }
+}
 
 bool lk_view::exists_at(double lx, double ly, struct wlr_surface **surface,
                         double *sx, double *sy) {

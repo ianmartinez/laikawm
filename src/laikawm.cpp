@@ -27,12 +27,6 @@
 #include "include/window_decoration.hpp"
 #include "include/wl_includes.hpp"
 
-/**
- * Support xwayland
- */
-#include "include/xwayland/xwayland.hpp"
-#include "include/events/xwayland_events.hpp"
-
 int main(int argc, char *argv[]) {
     wlr_log_init(WLR_DEBUG, NULL);
     char *startup_cmd = NULL;
@@ -190,34 +184,6 @@ int main(int argc, char *argv[]) {
         .background_image_mode = LK_IMG_MODE_COVER,
         .background_image_file = test_bg
     };
-
-    /**
-     * Set up xwayland
-     */
-    wlr_log(WLR_INFO, "Initializing Xwayland");
-    /**
-     * Initialize xwayland lazily (i.e. only load it when the first X11-only client
-     * tries to connect rather than loading at startup)
-     *
-     * TODO: CONFIG: Allow changing this behavior to load at startup
-     */
-    server.xwayland.wlr_xwayland =
-        wlr_xwayland_create(server.wl_display, server.compositor, true);
-    if (!server.xwayland.wlr_xwayland) {
-        wlr_log(WLR_ERROR, "Failed to start Xwayland");
-    } else {
-        // Event that fires once Xwayland has loaded
-        wl_signal_add(&server.xwayland.wlr_xwayland->events.ready,
-                      &server.xwayland_ready);
-        server.xwayland_ready.notify = xwayland_ready;
-
-        wl_signal_add(&server.xwayland.wlr_xwayland->events.new_surface,
-                      &server.xwayland_new_surface);
-        server.xwayland_new_surface.notify = xwayland_surface_added;
-
-        // Set the X11 $DISPLAY variable to match this server's X11 session
-        setenv("DISPLAY", server.xwayland.wlr_xwayland->display_name, true);
-    }
 
     /* Set the WAYLAND_DISPLAY environment variable to our socket and run the
      * startup command if requested. */

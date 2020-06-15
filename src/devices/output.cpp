@@ -11,12 +11,12 @@ void lk_output::render_rect(struct wlr_box *box, lk_color *color, float scale) {
     wlr_render_rect(renderer, &box_scaled, color_array, this->wlr_output->transform_matrix);
 }
 
-void lk_output::render_rect_outline(struct wlr_box *box, lk_color *color, float width, float scale) {
-    // Top
+void lk_output::render_rect_outline(struct wlr_box *box, lk_color *color, float width, float scale) {    
     struct wlr_box edge;
     memcpy(&edge, box, sizeof(struct wlr_box));
+    
+    // Top
     edge.height = width;
-
     render_rect(&edge, color, scale);
 
     // Bottom

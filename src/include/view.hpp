@@ -55,6 +55,8 @@ class lk_view {
                          bool fullscreen, struct wlr_output *fullscreen_output,
                          bool decoration);
         virtual lk_view_constraints get_constraints();
+        virtual void get_geometry(struct wlr_box *box);
+
         /**
          * Render server-side decorations on views that enable it.
          */

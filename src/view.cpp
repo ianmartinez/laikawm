@@ -137,7 +137,21 @@ lk_view_constraints lk_view::get_constraints() {
     };
 }
 
+void lk_view::get_geometry(struct wlr_box *box) {
+    if (this->surface) {
+        wlr_xdg_surface_get_geometry(this->xdg_surface, box);
+        box->x = box->y = 0;
+    } else {
+        box->width = 0;
+        box->height = 0;
+    }
+}
+
 void lk_view::render_ssd_view_frame(int sx, int sy, lk_render_data *render_data) {
     struct wlr_output *wlr_output = render_data->output->wlr_output;
     struct wlr_seat *seat = this->server->seat;
+    
+    struct wlr_box view_geometry;
+    this->get_geometry(&view_geometry);
+
 }

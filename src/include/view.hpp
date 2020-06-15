@@ -6,8 +6,10 @@
 #include "server.hpp"
 #include "wl_includes.hpp"
 #include "widgets/sizing.hpp"
+#include "render.hpp"
 
 class lk_server;
+class lk_render_data;
 
 enum lk_view_type {
     LK_XDG_VIEW,
@@ -21,14 +23,14 @@ class lk_view {
 
         lk_server *server;
         lk_view_type view_type;
-                
+
         struct wlr_surface *surface;
         struct wlr_xdg_surface *xdg_surface;
 
         bool is_shaded;
-        bool client_side_decoration;
+        bool wants_client_side_decoration;
         bool is_fullscreen;
-        
+
         /**
          * Events
          */
@@ -53,6 +55,10 @@ class lk_view {
                          bool fullscreen, struct wlr_output *fullscreen_output,
                          bool decoration);
         virtual lk_view_constraints get_constraints();
+        /**
+         * Render server-side decorations on views that enable it.
+         */
+        void render_ssd_view_frame(int sx, int sy, lk_render_data *render_data);
 };
 
 #endif

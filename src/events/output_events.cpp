@@ -81,16 +81,28 @@ void output_frame(struct wl_listener *listener, void *data) {
         }
 
         lk_render_data render_data = {
-            .output = output->wlr_output,
+            .output = output,
             .renderer = renderer,
             .view = view,
             .when = &now
         };
 
-        /* This calls our render_surface function for each surface among the
-         * xdg_surface's toplevel and popups. */
-        wlr_xdg_surface_for_each_surface(view->xdg_surface,
-                                         render_surface, &render_data);
+        /**
+         * Show server-side decorations if the client wants them.
+         */
+        if (!view->wants_client_side_decoration && !view->is_fullscreen) {
+           view->render_ssd_view_frame(0, 0, &render_data); 
+        }
+        
+        /**
+         * Only show the contents if the view is not shaded.
+         */
+        if (!view->is_shaded) {
+            /* This calls our render_surface function for each surface among the
+             * xdg_surface's toplevel and popups. */
+            wlr_xdg_surface_for_each_surface(view->xdg_surface,
+                                             render_surface, &render_data);
+        }
     }
 
     /* Hardware cursors are rendered by the GPU on a separate plane, and can be

@@ -9,19 +9,19 @@
 
 class lk_server_decoration {
     public:
-        lk_server *server;        
-        struct wlr_server_decoration *wlr_server_decoration;  
+        lk_server *server;
+        struct wlr_server_decoration *wlr_server_decoration;
 
         struct wl_listener destroy;
         struct wl_listener mode;
-        
+
         ~lk_server_decoration();
 };
 
 class lk_decoration_manager {
     public:
         lk_server *server;
-        
+
         struct wlr_server_decoration_manager *server_decoration_manager;
         struct wl_listener server_decoration;
 

@@ -136,3 +136,8 @@ lk_view_constraints lk_view::get_constraints() {
         .max_height = max_height
     };
 }
+
+void lk_view::render_ssd_view_frame(int sx, int sy, lk_render_data *render_data) {
+    struct wlr_output *wlr_output = render_data->output->wlr_output;
+    struct wlr_seat *seat = this->server->seat;
+}

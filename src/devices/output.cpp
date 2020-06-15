@@ -31,8 +31,6 @@ void lk_output::render_rect_outline(struct wlr_box *box, lk_color *color, float 
     // Right
     edge.x = edge.x + box->width - width;
     render_rect(&edge, color, scale);
-    
-    free(&edge);
 }
 
 void lk_output::scale_box(wlr_box *box, wlr_box *scaled_box, float scale) {

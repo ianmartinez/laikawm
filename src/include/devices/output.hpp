@@ -22,7 +22,15 @@ class lk_output {
         
         void render_rect(struct wlr_box *box, lk_color *color, float scale);
         void render_rect_outline(struct wlr_box *box, lk_color *color, float width, float scale);
-        void scale_box(wlr_box *box, wlr_box *scaled_box, float scale);
+        
+        /**
+         * Scale a box at a scale.
+         */
+        static void scale_box(wlr_box *box, wlr_box *scaled_box, float scale);
+                
+        /**
+         * Scale a box at this output's scale.
+         */
         void scale_box(wlr_box *box, wlr_box *scaled_box);
 };
 

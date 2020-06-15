@@ -21,8 +21,14 @@ class lk_view {
 
         lk_server *server;
         lk_view_type view_type;
+                
+        struct wlr_surface *surface;
         struct wlr_xdg_surface *xdg_surface;
 
+        bool is_shaded;
+        bool client_side_decoration;
+        bool is_fullscreen;
+        
         /**
          * Events
          */
@@ -44,8 +50,8 @@ class lk_view {
         void move_with_cursor();
         void resize_with_cursor(uint32_t edges);
         void map_surface(struct wlr_surface *wlr_surface,
-                        bool fullscreen, struct wlr_output *fullscreen_output,
-                        bool decoration);
+                         bool fullscreen, struct wlr_output *fullscreen_output,
+                         bool decoration);
         virtual lk_view_constraints get_constraints();
 };
 

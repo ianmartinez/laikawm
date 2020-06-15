@@ -35,6 +35,7 @@ void view_surface_recieved(struct wl_listener *listener, void *data) {
     /* Allocate a lk_view for this surface */
     auto view = new lk_view();
     view->server = server;
+    view->surface = xdg_surface->surface;
     view->xdg_surface = xdg_surface;
 
     /* Listen to the various events it can emit */

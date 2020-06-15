@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <wayland-server-core.h>
 #include <xkbcommon/xkbcommon.h>
+#include <wayland-client-protocol.h>
 
 #include <string>
 
@@ -24,8 +25,12 @@
 #include "include/util.hpp"
 #include "include/view.hpp"
 #include "include/events/view_events.hpp"
-#include "include/window_decoration.hpp"
 #include "include/wl_includes.hpp"
+#include "include/xdg_decoration.hpp"
+#include "include/events/decoration_events.hpp"
+
+#include "xdg-decoration-unstable-v1-protocol.h"
+lk_server server;
 
 int main(int argc, char *argv[]) {
     wlr_log_init(WLR_DEBUG, NULL);
@@ -46,8 +51,6 @@ int main(int argc, char *argv[]) {
         printf("Usage: %s [-s startup command]\n", argv[0]);
         return 0;
     }
-
-    lk_server server;
 
     /* The Wayland display is managed by libwayland. It handles accepting
      * clients from the Unix socket, manging Wayland globals, and so on. */
@@ -184,6 +187,22 @@ int main(int argc, char *argv[]) {
         .background_image_mode = LK_IMG_MODE_COVER,
         .background_image_file = test_bg
     };
+
+    /**
+     * Set up decoration manager so that we can use server side decorations.
+     */
+    server.decoration_manager = new lk_decoration_manager();
+    server.decoration_manager->server = &server;    
+    server.decoration_manager->server_decoration_manager = wlr_server_decoration_manager_create(server.wl_display);
+
+    wlr_server_decoration_manager_set_default_mode(
+        server.decoration_manager->server_decoration_manager,
+        WLR_SERVER_DECORATION_MANAGER_MODE_SERVER);
+
+    server.decoration_manager->server_decoration.notify = handle_decoration;
+    wl_signal_add(&server.decoration_manager->server_decoration_manager->events
+                  .new_decoration,
+                  &server.decoration_manager->server_decoration);
 
     /* Set the WAYLAND_DISPLAY environment variable to our socket and run the
      * startup command if requested. */

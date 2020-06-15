@@ -1,6 +1,8 @@
 #ifndef LK_SERVER_H
 #define LK_SERVER_H
 
+#include <wayland-client.h>
+#include <wayland-client-protocol.h>
 #include <wayland-server-core.h>
 #include <wayland-server-protocol.h>
 
@@ -12,10 +14,12 @@
 #include "wl_includes.hpp"
 #include "events/keyboard_events.hpp"
 #include "devices/keyboard.hpp"
+#include "xdg_decoration.hpp"
 
 class lk_view;
 class lk_keyboard;
 class lk_output;
+class lk_decoration_manager;
 
 class lk_server {
     public:
@@ -24,7 +28,8 @@ class lk_server {
         struct wlr_backend *backend;
         struct wlr_renderer *renderer;
         struct wlr_compositor *compositor;
-
+        lk_decoration_manager* decoration_manager;
+        
         struct wlr_xdg_shell *xdg_shell;
         struct wl_listener new_xdg_surface;
         struct wlr_layer_shell_v1 *layer_shell;
@@ -61,6 +66,15 @@ class lk_server {
         lk_view *view_at(double lx, double ly, struct wlr_surface **surface,
                          double *sx, double *sy);
         void launch_program(std::string program_name);
+        
+        /**
+         * Wayland registry
+         */
+        struct wl_registry *registry;
+        void registry_global_add(void *data, struct wl_registry *registry,
+                                 uint32_t name, const char *interface, uint32_t version);
+        void registry_global_remove(void *data, struct wl_registry *registry,
+                                    uint32_t name);
 
         /**
          * Mouse

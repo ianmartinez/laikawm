@@ -24,6 +24,7 @@ project_source_files = [
 
     # Events
     'events/cursor_events.cpp',
+    'events/decoration_events.cpp',
     'events/input_events.cpp',
     'events/keyboard_events.cpp',
     'events/layer_events.cpp',
@@ -44,7 +45,7 @@ project_source_files = [
     'render.cpp',
     'server.cpp',
     'view.cpp',
-    'window_decoration.cpp',
+    'xdg_decoration.cpp',
     'laikawm.cpp'
 ]
 

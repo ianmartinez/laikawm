@@ -28,8 +28,10 @@
 #include "include/wl_includes.hpp"
 #include "include/xdg_decoration.hpp"
 #include "include/events/decoration_events.hpp"
+#include "include/theme/default_theme.hpp"
 
 #include "xdg-decoration-unstable-v1-protocol.h"
+
 lk_server server;
 
 int main(int argc, char *argv[]) {
@@ -183,9 +185,9 @@ int main(int argc, char *argv[]) {
     std::string test_bg = std::string(getenv("HOME")) + "/" + "test.jpg";
     server.desktop = (lk_desktop) {
         .initialized = true,
-        .background_color = lk_color(0.0, 0.5, 0.7, 1.0),
         .background_image_mode = LK_IMG_MODE_COVER,
-        .background_image_file = test_bg
+        .background_image_file = test_bg,
+        .theme = LK_DEFAULT_THEME
     };
 
     /**

@@ -17,7 +17,7 @@ class lk_view;
  * frame handler to the per-surface render function. */
 class lk_render_data {
     public:
-        struct lk_output *output;
+        lk_output *output;
         struct wlr_renderer *renderer;
         lk_view *view;
         struct timespec *when;

@@ -42,6 +42,7 @@ project_source_files = [
     'devices/output.cpp',    
     
     # Other
+    'box.cpp',
     'render.cpp',
     'server.cpp',
     'view.cpp',

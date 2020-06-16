@@ -65,7 +65,7 @@ void output_frame(struct wl_listener *listener, void *data) {
     lk_desktop desktop = output->server->desktop;
     if (desktop.initialized) {
         float bg_color_array[4];
-        desktop.background_color.into_array(bg_color_array);
+        desktop.theme.color_scheme.background.into_array(bg_color_array);
         wlr_renderer_clear(renderer, bg_color_array);
     }
 

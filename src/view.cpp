@@ -153,5 +153,4 @@ void lk_view::render_ssd_view_frame(int sx, int sy, lk_render_data *render_data)
     
     struct wlr_box view_geometry;
     this->get_geometry(&view_geometry);
-
 }

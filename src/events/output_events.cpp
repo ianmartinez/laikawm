@@ -91,9 +91,9 @@ void output_frame(struct wl_listener *listener, void *data) {
          * Show server-side decorations if the client wants them.
          */
         if (!view->wants_client_side_decoration && !view->is_fullscreen) {
-           view->render_ssd_view_frame(0, 0, &render_data); 
+            view->render_ssd_view_frame(&render_data);
         }
-        
+
         /**
          * Only show the contents if the view is not shaded.
          */

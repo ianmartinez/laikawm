@@ -60,7 +60,7 @@ class lk_view {
         /**
          * Render server-side decorations on views that enable it.
          */
-        void render_ssd_view_frame(int sx, int sy, lk_render_data *render_data);
+        void render_ssd_view_frame(lk_render_data *render_data);
 };
 
 #endif

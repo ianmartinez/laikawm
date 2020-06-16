@@ -13,8 +13,10 @@ void decoration_handle_mode(struct wl_listener *listener, void *data) {
     auto decoration_surface = (struct wlr_surface *)decoration->wlr_server_decoration->surface->data;
 
     for (auto &view : decoration->server->views) {
+        view->wants_client_side_decoration = true;
+        
         if (view->surface == decoration_surface) {
-            view->wants_client_side_decoration = WLR_SERVER_DECORATION_MANAGER_MODE_CLIENT;
+            view->wants_client_side_decoration = false;
         }
     }
 }

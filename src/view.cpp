@@ -2,6 +2,7 @@
 
 #include <list>
 #include <algorithm>
+#include "../include/box.hpp"
 
 lk_view::~lk_view() {
     bool view_on_server =
@@ -140,17 +141,36 @@ lk_view_constraints lk_view::get_constraints() {
 void lk_view::get_geometry(struct wlr_box *box) {
     if (this->surface) {
         wlr_xdg_surface_get_geometry(this->xdg_surface, box);
-        box->x = box->y = 0;
+        box->x = this->x;
+        box->y = this->y;
     } else {
         box->width = 0;
         box->height = 0;
     }
 }
 
-void lk_view::render_ssd_view_frame(int sx, int sy, lk_render_data *render_data) {
+void lk_view::render_ssd_view_frame(lk_render_data *render_data) {
     struct wlr_output *wlr_output = render_data->output->wlr_output;
     struct wlr_seat *seat = this->server->seat;
-    
+    lk_theme *theme = &this->server->desktop.theme;
+    struct wlr_surface *focused_surface = seat->keyboard_state.focused_surface;
+    bool is_focused = (this->surface == focused_surface);
+
     struct wlr_box view_geometry;
     this->get_geometry(&view_geometry);
+    struct wlr_box box;
+
+    // Render titlebar
+    box = {
+        .x = view_geometry.x - (theme->frame_width + theme->border_width),
+        .y = view_geometry.y - (theme->border_width + theme->titlebar_height),
+        .width = view_geometry.width + ((theme->frame_width + theme->border_width) * 2),
+        .height = theme->titlebar_height + theme->border_width
+    };
+    grow_box_all_sides(&box, -theme->border_width);
+    if (is_focused) {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_active_titlebar);
+    } else {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_inactive_titlebar);
+    }
 }

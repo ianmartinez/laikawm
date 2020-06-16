@@ -52,6 +52,9 @@ void view_surface_recieved(struct wl_listener *listener, void *data) {
     wl_signal_add(&toplevel->events.request_move, &view->request_move);
     view->request_resize.notify = view_request_resize;
     wl_signal_add(&toplevel->events.request_resize, &view->request_resize);
+    
+    view->x = 50;
+    view->y = 50;
 
     /* Add it to the list of views. */
     server->views.push_back(view);

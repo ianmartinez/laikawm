@@ -2,7 +2,6 @@
 
 void lk_output::render_rect(struct wlr_box *box, lk_color *color, float scale) {
     struct wlr_renderer *renderer = wlr_backend_get_renderer(this->wlr_output->backend);
-
     struct wlr_box box_scaled;
     ::scale_box(box, &box_scaled, scale);
 
@@ -31,6 +30,14 @@ void lk_output::render_rect_outline(struct wlr_box *box, lk_color *color, float 
     // Right
     edge.x = edge.x + box->width - width;
     render_rect(&edge, color, scale);
+}
+
+void lk_output::render_rect(struct wlr_box *box, lk_color *color) {
+    render_rect(box, color, this->wlr_output->scale);
+}
+
+void lk_output::render_rect_outline(struct wlr_box *box, lk_color *color, float width) {
+    render_rect_outline(box, color, width, this->wlr_output->scale);
 }
 
 void lk_output::scale_box(wlr_box *box, wlr_box *scaled_box) {

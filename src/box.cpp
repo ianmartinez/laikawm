@@ -21,6 +21,13 @@ void grow_box_sides(struct wlr_box *box, int l, int r, int t, int b) {
 }
 
 /**
+ * Grow a box from all sides with a constant value.
+ */
+void grow_box_all_sides(struct wlr_box *box, int value) {
+    grow_box_sides(box, value, value, value, value);
+}
+
+/**
  * Grow a box's sides, with left and right the same value and
  * top and bottom the same value.
  */

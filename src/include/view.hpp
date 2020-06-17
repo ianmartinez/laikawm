@@ -28,7 +28,7 @@ class lk_view {
         struct wlr_xdg_surface *xdg_surface;
 
         bool is_shaded;
-        bool wants_client_side_decoration;
+        bool wants_client_side_decoration = false;
         bool is_fullscreen;
 
         /**

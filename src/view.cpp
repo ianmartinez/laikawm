@@ -165,12 +165,75 @@ void lk_view::render_ssd_view_frame(lk_render_data *render_data) {
         .x = view_geometry.x - (theme->frame_width + theme->border_width),
         .y = view_geometry.y - (theme->border_width + theme->titlebar_height),
         .width = view_geometry.width + ((theme->frame_width + theme->border_width) * 2),
-        .height = theme->titlebar_height + theme->border_width
+        .height = theme->titlebar_height
     };
-    grow_box_all_sides(&box, -theme->border_width);
     if (is_focused) {
         render_data->output->render_rect(&box, &theme->color_scheme.window_active_titlebar);
     } else {
         render_data->output->render_rect(&box, &theme->color_scheme.window_inactive_titlebar);
+    }
+
+    // Render view border
+    box = {
+        .x = view_geometry.x,
+        .y = view_geometry.y,
+        .width = view_geometry.width,
+        .height = view_geometry.height
+    };
+    grow_box_all_sides(&box, theme->border_width);
+    if (is_focused) {
+        render_data->output->render_rect_outline(&box, &theme->color_scheme.window_active_border, theme->border_width);
+    } else {
+        render_data->output->render_rect_outline(&box, &theme->color_scheme.window_inactive_border, theme->border_width);
+    }
+
+    // Render left frame
+    box = {
+        .x = view_geometry.x - (theme->frame_width + theme->border_width),
+        .y = view_geometry.y - 1,
+        .width = theme->frame_width,
+        .height = view_geometry.height + 2
+    };
+    if (is_focused) {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_active_titlebar);
+    } else {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_inactive_titlebar);
+    }
+
+    // Render right frame
+    box.x = view_geometry.x + view_geometry.width + theme->border_width;
+    if (is_focused) {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_active_titlebar);
+    } else {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_inactive_titlebar);
+    }
+
+    // Render bottom frame
+    box = {
+        .x = view_geometry.x - (theme->frame_width + theme->border_width),
+        .y = view_geometry.y + view_geometry.height + theme->border_width,
+        .width = view_geometry.width + ((theme->frame_width + theme->border_width) * 2),
+        .height = theme->frame_width
+    };
+    if (is_focused) {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_active_titlebar);
+    } else {
+        render_data->output->render_rect(&box, &theme->color_scheme.window_inactive_titlebar);
+    }
+
+    // Render frame border
+    box = {
+        .x = view_geometry.x,
+        .y = view_geometry.y,
+        .width = view_geometry.width,
+        .height = view_geometry.height
+    };
+    int frame_offset = theme->border_width + theme->frame_width;
+    int titlebar_offset = theme->border_width + theme->titlebar_height;
+    grow_box_sides(&box, frame_offset, frame_offset, titlebar_offset, frame_offset);
+    if (is_focused) {
+        render_data->output->render_rect_outline(&box, &theme->color_scheme.window_active_border, theme->border_width);
+    } else {
+        render_data->output->render_rect_outline(&box, &theme->color_scheme.window_inactive_border, theme->border_width);
     }
 }
